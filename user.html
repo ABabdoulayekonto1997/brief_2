@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>utiliser</title>
+    <title>user</title>
     <!-- Intégration de Tailwind CSS -->
      <link rel="stylesheet" href="src/output.css">
     <!-- Intégration d'Alpine.js pour la gestion du menu mobile -->
@@ -16,28 +16,31 @@
     <!-- Header Fixe et Responsive -->
     <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center py-2 px-4">
-
             <!-- Logo -->
             <div class="text-2xl font-bold">
-                <a href="#"><img class="w-24" src="images/logo_WebNova.png" alt="Logo WebNova"></a>
+                <a href="#"><img class="w-16 md:w-24 w-16" src="images/logo_WebNova.png" alt="Logo WebNova"></a>
             </div>
-
+    
             <!-- Menu Desktop -->
-            <nav class="bg-[#e7f6f1] justify-center rounded-lg text-center md:w-[340px] md:p-[5px] hidden md:flex space-x-6 text-[#0da876]">
-                <a href="#" class="hover:text-[#16428b]">Accueil</a>
-                <a href="#" class="hover:text-[#16428b]">Services</a>
-                <a href="#" class="hover:text-[#16428b]">À propos</a>
-                <a href="#" class="hover:text-[#16428b]">Contact</a>
+            <nav class="bg-[#e7f6f1] justify-center rounded-lg text-center md:w-[320px] md:p-2 hidden md:flex space-x-4 text-[#0da876]">
+                <a href="#" class="hover:text-[#16428b] transition-all">Accueil</a>
+                <a href="#" class="hover:text-[#16428b] transition-all">Services</a>
+                <a href="#" class="hover:text-[#16428b] transition-all">À propos</a>
+                <a href="#" class="hover:text-[#16428b] transition-all">Contact</a>
             </nav>
-
-            <!-- Bouton Connexion (Visible sur tous les écrans) -->
-            <div class="hidden md:block">
-                <a href="#" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
-                    Connexion
+    
+            <!-- Image circulaire + Icône (Desktop) -->
+            <div class="hidden md:flex items-center space-x-3">
+                <h2 class="text-gray-700">Bonjour Konto</h2>
+                <a href="#">
+                    <img src="images/cv1.png" alt="Profil" class="w-12 h-12 rounded-full shadow-md">
+                </a>
+                <a href="#" class="text-[#16428b] text-2xl">
+                    <img src="images/Vector.jpg" alt="Icône Paramètres">
                 </a>
             </div>
-
-            <!-- Menu Mobile (Burger) -->
+    
+            <!-- Menu Mobile -->
             <div class="md:hidden" x-data="{ open: false }">
                 <button @click="open = !open" class="text-gray-700 focus:outline-none">
                     <svg x-show="!open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -47,23 +50,30 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
-
+    
                 <!-- Menu Mobile -->
-                <div x-show="open" class="absolute top-16 left-0 w-full bg-white shadow-md">
-                    <nav class="flex flex-col items-center space-y-4 py-4">
-                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Accueil</a>
-                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Services</a>
-                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">À propos</a>
-                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Contact</a>
-                        <a href="#" class="hover:text-white text-[#16428b] px-4 py-2 shadow-md rounded-lg hover:bg-[#16428b]">
-                            Connexion
-                        </a>
+                <div x-cloak x-show="open" x-transition class="absolute top-16 left-0 w-full bg-white shadow-md p-4">
+                    <nav class="flex flex-col items-center space-y-4">
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b] transition-all">Accueil</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b] transition-all">Services</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b] transition-all">À propos</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b] transition-all">Contact</a>
+                        
+                        <!-- Image + Icône sur mobile -->
+                        <div class="flex items-center space-x-3">
+                            <a href="#">
+                                <img src="images/cv1.png" alt="Profil" class="w-12 h-12 rounded-full  shadow-md">
+                            </a>
+                            <a href="#" class="text-[#16428b] text-2xl">
+                                <img src="images/Vector.jpg" alt="" srcset="">
+                            </a>
+                        </div>
                     </nav>
                 </div>
             </div>
-
         </div>
     </header>
+     
 
     <!-- Section baniere -->
     <section class="bg-[#e7f6f1] pt-32 py-16">
