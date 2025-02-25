@@ -1,13 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil
-        
-    </title>
+    <title>Accueil</title>
+    <!-- Intégration de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Intégration d'Alpine.js pour la gestion du menu mobile -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome pour les icônes -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- Header Fixe et Responsive -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center py-2 px-4">
+
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="#"><img class="w-24" src="images/logo_WebNova.png" alt="Logo WebNova"></a>
+            </div>
+
+            <!-- Menu Desktop -->
+            <nav class="bg-[#e7f6f1] justify-center rounded-lg text-center md:w-[340px] md:p-[5px] hidden md:flex space-x-6 text-[#0da876]">
+                <a href="#" class="hover:text-[#16428b]">Accueil</a>
+                <a href="#" class="hover:text-[#16428b]">Services</a>
+                <a href="#" class="hover:text-[#16428b]">À propos</a>
+                <a href="#" class="hover:text-[#16428b]">Contact</a>
+            </nav>
+
+            <!-- Bouton Connexion (Visible sur tous les écrans) -->
+            <div class="hidden md:block">
+                <a href="#" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                    Connexion
+                </a>
+            </div>
+
+            <!-- Menu Mobile (Burger) -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <button @click="open = !open" class="text-gray-700 focus:outline-none">
+                    <svg x-show="!open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                    <svg x-show="open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <!-- Menu Mobile -->
+                <div x-show="open" class="absolute top-16 left-0 w-full bg-white shadow-md">
+                    <nav class="flex flex-col items-center space-y-4 py-4">
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Accueil</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Services</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">À propos</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Contact</a>
+                        <a href="#" class="hover:text-white text-[#16428b] px-4 py-2 shadow-md rounded-lg hover:bg-[#16428b]">
+                            Connexion
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Section principale -->
+    <section class="bg-[#e7f6f1] pt-32 py-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <!-- Partie gauche (Titre, Sous-texte, Bouton) -->
+            <div class="md:text-left md:w-1/2 text-center">
+                <h1 class="text-4xl text-[#16428b] font-bold mb-4">Bienvenue sur WebNova, l’outil idéal pour créer votre CV en ligne !</h1>
+                <p class="text-lg text-black mb-6">Créez un CV professionnel en quelques minutes et boostez votre carrière !</p>
+                <div class="text-center">
+                    <a href="#" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                        Créer votre CV maintenant
+                    </a>
+                </div>
+            </div>
+
+            <!-- Partie droite (Image avec effet hover) -->
+            <div class="mt-8 md:mt-0 md:w-1/2">
+                <img src="images/img_bannier.jpg" alt="Image de la bannière" class="w-full h-auto rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-[0_6px_20px_rgba(0,218,118,0.6)] hover:brightness-75" loading="lazy">
+            </div>
+        </div>
+    </section>
     
+    <!-- Section Solutions -->
+    <section class="py-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <!-- Partie gauche (Titre et Texte) -->
+            <div class="md:w-1/2">
+                <div class="text-center md:text-left mb-6">
+                    <h2 class="text-3xl font-bold text-[#16428b] mb-4">Explorez nos solutions innovantes</h2>
+                    <p class="text-lg text-black">Nous offrons des solutions sur mesure pour répondre aux besoins spécifiques de votre entreprise. De la création de votre CV à la gestion de carrière, nous vous accompagnons à chaque étape.</p>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-[#16428b] mb-4">Notre expertise à votre service</h2>
+                    <p class="text-lg text-black">Nos experts sont là pour vous guider à chaque étape. Nous fournissons des solutions personnalisées pour faire évoluer votre carrière de manière optimale.</p>
+                </div>
+            </div>
+
+            <!-- Partie droite (Image) -->
+            <div class="mt-8 md:mt-0 md:w-1/2">
+                <img src="images/equipe.jpg" alt="Image des solutions innovantes" class="w-full h-auto rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#16428b] text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-6 pb-6 text-center md:text-left">
+                <div class="flex justify-center md:justify-start">
+                    <img class="w-16" src="images/logo_footer_bleu.png" alt="Logo WebNova">
+                </div>
+                <p class="text-xl font-medium mt-4 md:mt-0">L’énergie est notre avenir, économique</p>
+            </div>
+
+            <!-- Sections d'information -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">À PROPOS</h1>
+                    <p>WebNova est un site de carrière alimenté par des experts en carrière, avec des millions de lecteurs chaque année.</p>
+                </div>
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">NOS SERVICES</h1>
+                    <p class="hover:text-gray-300 cursor-pointer">CV</p>
+                    <p class="hover:text-gray-300 cursor-pointer">Lettre de motivation</p>
+                </div>
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">CONTACT</h1>
+                    <p>Email: <a href="mailto:Mahamatkonto24@gmail.com" class="hover:text-gray-300">Mahamatkonto24@gmail.com</a></p>
+                    <p>Téléphone: <a href="tel:+123456789" class="hover:text-gray-300">+123 456 789</a></p>
+                </div>
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">SUIVEZ-NOUS</h1>
+                    <div class="flex justify-center md:justify-start space-x-6 text-2xl md:text-3xl">
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
