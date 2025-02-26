@@ -57,3 +57,24 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel();
     });
 });
+
+//----------
+
+document.getElementById("informationPerso").addEventListener("click",function(){
+    document.getElementById("cacheI").classList.toggle("hidden");
+})
+document.getElementById("informationPerso2").addEventListener("click",function(){
+    document.getElementById("cache2").classList.toggle("hidden");
+})
+document.getElementById("informationPerso3").addEventListener("click",function(){
+    document.getElementById("cache3").classList.toggle("hidden");
+})
+document.getElementById("informationPerso4").addEventListener("click",function(){
+    document.getElementById("cache4").classList.toggle("hidden");
+})
+document.getElementById("informationPerso5").addEventListener("click",function(){
+    document.getElementById("cache5").classList.toggle("hidden");
+})
+document.getElementById("informationPerso6").addEventListener("click",function(){
+    document.getElementById("cache6").classList.toggle("hidden");
+})

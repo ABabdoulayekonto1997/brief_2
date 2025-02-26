@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cv</title>
+    <!-- Intégration de Tailwind CSS -->
+     <link rel="stylesheet" href="src/output.css">
+    <!-- Intégration d'Alpine.js pour la gestion du menu mobile -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome pour les icônes -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <!-- Ajoutez cette partie dans le <head> de votre fichier HTML -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-[#dbf2ea]">
+    <header class="fixed top-0 left-0 w-full bg-[#0da876] shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center py-2 px-4">
+            <!-- Bouton Retour avec flèche -->
+            <div class="text-2xl text-white font-bold cursor-pointer flex items-center space-x-2 hover:text-gray-200 transition-all duration-300" onclick="history.back()">
+                <a href="user.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </a>
+                <h2 class="text-sm md:text-base">Retour</h2>
+            </div>
+    
+            <!-- Image circulaire + Icône (Desktop et Mobile) -->
+            <div class="flex items-center space-x-3">
+                <!-- Bouton Télécharger -->
+                <a href="cv.pdf" download class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                    Télécharger
+                </a>
+                <h2 class="text-white text-sm md:text-base">Bonjour Konto</h2>
+                
+                <!-- Image circulaire visible uniquement sur les écrans moyens et plus grands -->
+                <div id="profileImage" class="hidden sm:block">
+                    <a href="#">
+                        <img src="images/cv1.png" alt="Profil" class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md hover:opacity-80 transition-all duration-300">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <h2 class="pt-24 text-center text-2xl sm:text-2xl md:text-3xl font-semibold text-[#16428b] mb-6">Créer votre cv pro en visulisant de maniere instanné</h2>
+   
+    <div class=" grid grid-cols-1 md:grid-cols-2 gap-12 p-12">
+        <!--section 1-->
+        <div class="w-[600px] ">
+            <!--information personelle-->
+            <div class="items-center bg-white shadow-md rounded-lg p-3">
+                <div class="flex">
+                    <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Information Professionnel</h2>
+                <img id="informationPerso" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                </div>
+                <div id="cacheI"  class="hidden grid grid-cols-3 gap-3">
+                    <div class="border w-40">
+                        <h3>photo</h3>
+                    </div>
+                    <div>
+                        <div><label for="">Nom</label><input class="border" type="text"></div>
+                        <div><label for="">Prenom</label><input class="border" type="text"></div>
+                    </div>
+                    <div>
+                        <div><label for="">Sexe</label><input class="border" type="text"></div>
+                        <div><label for="">Date de naissance</label><input class="border" type="text"></div>
+                    </div>
+                </div>
+            </div>
+            <!--profil--> <br>
+            <div class="items-center bg-white shadow-md rounded-lg p-3">
+                <div class="flex">
+                    <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Profil</h2>
+                <img id="informationPerso2" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                </div>
+                <div id="cache2"  class="hidden grid grid-cols-1 ">
+                    <textarea class="pt-2 border" name="" id=""></textarea>
+                    
+                </div>
+            </div>
+            <!--Formation--> <br>
+            <div class="items-center bg-white shadow-md rounded-lg p-3">
+                <div class="flex">
+                    <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Formation</h2>
+                <img id="informationPerso3" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                </div>
+                <div id="cache3"  class="hidden grid grid-cols-2 ">
+                    <div class="grid  grid-cols-2 gap-32">
+                        <div>
+                            <div><label for="">Diplome</label><input class="border" type="text"></div>
+                            <div><label for="">Année</label><input class="border" type="text"></div>
+                       </div>
+                       <div>
+                            <div><label for="">Etablissemnt</label><input class="border" type="text"></div>
+                            <div><label for="">Nom</label><input class="border" type="text"></div>
+                        </div>    
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!--FCompteneces--> <br>
+            <div class="items-center bg-white shadow-md rounded-lg p-3">
+                <div class="flex">
+                    <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Competence</h2>
+                <img id="informationPerso4" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                </div>
+                <div id="cache4"  class="hidden grid grid-cols-2 ">
+                    <div class="grid  grid-cols-2 gap-32">
+                        <div>
+                            <div><label for="">Competence</label><input class="border" type="text"></div>
+                            <div class="pt-4"><button class="bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Competence</button></div>
+                       </div>
+                       <div>
+                            <div><label for="">niveau</label><input required class="border" type="text"></div>
+                        </div>    
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!--Loisir--> <br>
+            <div class="items-center bg-white shadow-md rounded-lg p-3">
+                <div class="flex">
+                    <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Loisir</h2>
+                <img id="informationPerso5" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                </div>
+                <div id="cache5"  class="hidden grid grid-cols-2 ">
+                    <div class="grid  grid-cols-2 gap-32">
+                        <div>
+                            <div><label for="">Loisir</label><input class="border" type="text"></div>
+                            <div class="pt-4"><button class="bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Competence</button></div>
+                       </div>
+                       <div>
+                            <div><label for="">niveau</label><input required class="border" type="text"></div>
+                        </div>    
+                    </div>
+                    
+                </div>
+            </div>
+
+             <!--Langue--> <br>
+             <div class="items-center bg-white shadow-md rounded-lg p-3">
+                <div class="flex">
+                    <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Langue</h2>
+                <img id="informationPerso6" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                </div>
+                <div id="cache6"  class="hidden grid grid-cols-2 ">
+                    <div class="grid  grid-cols-2 gap-32">
+                        <div>
+                            <div><label for="">Langue</label><input class="border" type="text"></div>
+                            <div class="pt-4"><button class="bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Competence</button></div>
+                       </div>
+                       <div>
+                            <div><label for="">niveau</label><input required class="border" type="text"></div>
+                        </div>    
+                    </div>
+                    
+                </div>
+            </div>
+            <!--fin section 1-->
+            
+        </div>
+        <div class="w-full h-auto max-w-[210mm] max-h-[297mm] border border-gray-500 p-4">
+            <h1>ddhhhhh</h1>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
