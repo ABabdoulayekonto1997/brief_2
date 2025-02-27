@@ -8,26 +8,57 @@
 </head>
 <body class="bg-gray-100">
 
-    <nav class="container mx-auto flex items-center justify-between py-4">
+   <!-- Header Fixe et Responsive -->
+   <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center py-2 px-4">
+
         <!-- Logo -->
-        <div class="flex items-center">
-            <a href="#"><img src="logo1.png" alt="Logo1" class="w-25 h-20 mr-10"></a>
+        <div class="text-2xl font-bold">
+            <a href="#"><img class="w-24" src="../images/logo_WebNova.png" alt="Logo WebNova"></a>
         </div>
 
-        <!-- Menu de navigation -->
-        <div class="bg-green-100 rounded-full px-6 py-2 flex space-x-6 shadow-md">
-            <a href="#" class="text-green-700 font-medium hover:underline">Accueil</a>
-            <a href="#" class="text-green-900 font-bold hover:underline">Cv</a>
-            <a href="#" class="text-green-700 font-medium hover:underline">Lettre de motivation</a>
-            <a href="#" class="text-green-700 font-medium hover:underline">Contact</a>
+        <!-- Menu Desktop -->
+        <nav class="bg-[#e7f6f1] justify-center rounded-lg text-center md:w-[350px] md:p-[5px] hidden md:flex space-x-6 text-[#0da876]">
+            <a href="Acueil.html" class="hover:text-[#16428b]">Accueil</a>
+            <a href="florette/inscription.html" class="hover:text-[#16428b]">cv</a>
+            <a href="#" class="hover:text-[#16428b]">Lettre de motivation</a>
+            <a href="florette/contact.html" class="hover:text-[#16428b]">Contact</a>
+        </nav>
+
+        <!-- Bouton Connexion (Visible sur tous les écrans) -->
+        <div class="hidden md:block">
+            <a href="#" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                Connexion
+            </a>
         </div>
 
-        <!-- Bouton de connexion -->
-        <a href="#" class="border border-gray-300 rounded-full px-4 py-2 text-gray-700 hover:bg-gray-200">
-            Connexion
-        </a>
-    </nav>
+        <!-- Menu Mobile (Burger) -->
+        <div class="md:hidden" x-data="{ open: false }">
+            <button @click="open = !open" class="text-gray-700 focus:outline-none">
+                <svg x-show="!open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+                <svg x-show="open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
 
+            <!-- Menu Mobile -->
+            <div x-show="open" class="absolute top-16 left-0 w-full bg-white shadow-md">
+                <nav class="flex flex-col items-center space-y-4 py-4">
+                    <a href="#" class="text-[#0da876] hover:text-[#16428b]">Accueil</a>
+                    <a href="#" class="text-[#0da876] hover:text-[#16428b]">Services</a>
+                    <a href="#" class="text-[#0da876] hover:text-[#16428b]">À propos</a>
+                    <a href="#" class="text-[#0da876] hover:text-[#16428b]">Contact</a>
+                    <a href="#" class="hover:text-white text-[#16428b] px-4 py-2 shadow-md rounded-lg hover:bg-[#16428b]">
+                        Connexion
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</header>
 <section class="relative w-full h-[300px] md:h-[400px] flex items-center justify-center bg-cover bg-center"
     style="background-image: url('./contact.png');">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cv</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <!-- Intégration de Tailwind CSS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+   
      <link rel="stylesheet" href="src/output.css">
     <!-- Intégration d'Alpine.js pour la gestion du menu mobile -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -32,12 +35,10 @@
             <!-- Image circulaire + Icône (Desktop et Mobile) -->
             <div class="flex items-center space-x-3">
                 <!-- Bouton Télécharger -->
-                <button id="sauvergader"  download class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                <button id="sauvergader" onclick="sauvegarder()"  class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
                     sauvergader
                 </button>
-                <button id="telechager"  download class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
-                    Télécharger
-                </button>
+                <button id="telechager"  class="bg-white text-[#16428b]  px-4 py-2 shadow-md rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Télécharger</button>
                 <h2 class="text-white text-sm md:text-base">Bonjour Konto</h2>
                 
                 <!-- Image circulaire visible uniquement sur les écrans moyens et plus grands -->
@@ -52,41 +53,42 @@
     
     <h2 class="pt-24 text-center text-2xl sm:text-2xl md:text-3xl font-semibold text-[#16428b] mb-6">Créer votre cv pro en visulisant de maniere instanné</h2>
    
-    <div class=" grid  md:grid-cols-[50%_50%] gap-12 p-12">
+    <div class="grid  md:grid-cols-[50%_50%] gap-12 p-2">
+        <form action="">
         <!--section 1-->
         <div>
             <!--information personelle-->
             <div class="items-center bg-white shadow-md rounded-lg p-3">
-                <div class="flex">
+                <div id="informationPerso" class="flex cursor-pointer peer-checked:opacity-100 peer-checked:scale-100">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Information Professionnel</h2>
-                <img id="informationPerso" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                <img id="iconeclic" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
-                <div id="cacheI"  class="hidden grid grid-cols-3 gap-3">
-                    <div id="uploadBtn" class="border w-40">
+                <div id="cacheI"  class="hidden grid grid-cols-1 sm:grid-cols-1  md:grid-cols-3 gap-3">
+                    <div id="uploadBtn" class="border shadow-md rounded border-gray-500 w-40">
                          <input type="file" id="imageInput" accept="image/*" class="hidden">
                         <h2>photo</h2>
                     </div>
-                    <div>
-                        <div><label for="">Nom</label><input id="Recupere-Nom" class="border" type="text"></div>
-                        <div><label for="">Telephone</label><input id="Telephone" class="border" type="number"></div>
+                    <div class="w-full">
+                        <div><label for="">Nom</label><input  id="Recupere-Nom" class="border shadow-md rounded border-gray-500" type="text"></div>
+                        <div><label for="">Telephone</label><input id="Telephone" class="border shadow-md rounded border-gray-500" type="number"></div>
                     </div>
                     <div>
-                        <div><label for="">Prenom</label><input id="Recupere-Prenom" class="border" type="text"></div>
-                        <div><label for="">Date de naissance</label><input id="Date" class="border" type="date"></div>
+                        <div><label for="">Prenom</label><input id="Recupere-Prenom" class="border shadow-md rounded border-gray-500" type="text"></div>
+                        <div><label for="">Date de naissance</label><input id="Date" class="border shadow-md rounded border-gray-500" type="date"></div>
                     </div>
-                    <div class="flex gap-2 w-full">
-                        <div><label for="">Poste</label><input id="RecuperePoste" class="border" type="text"></div>
-                        <div><label for="">Mail</label><input id="RecupereMail" class="border" type="email"></div>
-                        <div><label for="">Adresse</label><input id="RecupereAdress" class="border" type="text"></div>
+                    <div class="flex  gap-2 w-full">
+                        <div><label for="">Poste</label><input id="RecuperePoste" class="border shadow-md rounded border-gray-500" type="text"></div>
+                        <div><label for="">Mail</label><input id="RecupereMail" class="border shadow-md rounded border-gray-500" type="email"></div>
+                        <div><label for="">Adresse</label><input id="RecupereAdress" class="border shadow-md rounded border-gray-500" type="text"></div>
                     </div>
                     
                 </div>
             </div>
             <!--profil--> <br>
             <div class="items-center bg-white shadow-md rounded-lg p-3">
-                <div class="flex">
+                <div class="flex cursor-pointer">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Profil</h2>
-                <img id="informationPerso2" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                <img id="informationPerso2" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
                 <div id="cache2"  class="hidden grid grid-cols-1 ">
                     <textarea  class="pt-2 border" name="" id="Recupere-profil"></textarea>
@@ -95,19 +97,19 @@
             </div>
             <!--Formation--> <br>
             <div class="items-center bg-white shadow-md rounded-lg p-3">
-                <div class="flex">
+                <div class="flex cursor-pointer">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Formation</h2>
-                <img id="informationPerso3" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                <img id="informationPerso3" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
             <form action="">
                 <div id="cache3"  class="hidden grid grid-cols-2 ">
                     <div class="grid  grid-cols-2 gap-32">
                         <div>
-                            <div><label for="">Diplome</label><input id="diplome" required placeholder="entre la date" class="border" type="text"></div>
-                            <div><label for="">Année</label><input required id="DateFormation" class="border" type="date"></div>
+                            <div><label for="">Diplome</label><input id="diplome" required placeholder="Entr votr dipmloe" class="border shadow-md rounded border-gray-500" type="text"></div>
+                            <div><label for="">Année</label><input required id="DateFormation" class="border shadow-md rounded border-gray-500" type="date"></div>
                        </div>
                        <div>
-                            <div><label  for="">Etablissemnt</label><input required id="Etablissemnt" class="border" type="text"></div><br>
+                            <div><label  for="">Etablissemnt</label><input required id="Etablissemnt" class="border shadow-md rounded border-gray-500" type="text"></div><br>
                             <div><button id="BoutonFormation" class=" bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Formation</button></div>
                         </div>    
                     </div>
@@ -117,14 +119,14 @@
 
             <!--Compteneces--> <br>
             <div class="items-center bg-white shadow-md rounded-lg p-3">
-                <div class="flex">
+                <div class="flex cursor-pointer">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Competence</h2>
-                <img id="informationPerso4" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                <img id="informationPerso4" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
                 <div id="cache4"  class="hidden grid grid-cols-2 ">
                     <div class="grid  grid-cols-2 gap-32">
                         <div>
-                            <div><label for="">Competence</label><input id="RecupereCompetence" class="border" type="text"></div>
+                            <div><label for="">Competence</label><input id="RecupereCompetence" class="border shadow-md rounded border-gray-500" type="text"></div>
                             <div class="pt-4"><button id="BoutonCompetence" class="bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Competence</button></div>
                        </div>  
                     </div>
@@ -133,14 +135,14 @@
 
             <!--Loisir--> <br>
             <div class="items-center bg-white shadow-md rounded-lg p-3">
-                <div class="flex">
+                <div class="flex cursor-pointer">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Loisir</h2>
-                <img id="informationPerso5" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                <img id="informationPerso5" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
                 <div id="cache5"  class="hidden grid grid-cols-2 ">
                     <div class="grid  grid-cols-2 gap-32">
                         <div>
-                            <div><label for="">Loisir</label><input id="RecupereLoisir" class="border" type="text"></div>
+                            <div><label for="">Loisir</label><input id="RecupereLoisir" class="border shadow-md rounded border-gray-500" type="text"></div>
                             <div class="pt-4"><button id="BoutonLoisir" class="bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Competence</button></div>
                        </div>   
                     </div>
@@ -150,14 +152,14 @@
 
              <!--Langue--> <br>
              <div class="items-center bg-white shadow-md rounded-lg p-3">
-                <div class="flex">
+                <div class="flex cursor-pointer">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Langue</h2>
-                <img id="informationPerso6" src="images/icone.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                <img id="informationPerso6" src="images/iconefleche.png" alt="Icône" class=" w-6 h-6 sm:w-8 sm:h-8  md:w-8 md:h-8 ml-auto">
                 </div>
                 <div id="cache6"  class="hidden grid grid-cols-2 ">
                     <div class="grid  grid-cols-2 gap-32">
                         <div>
-                            <div><label for="">Langue</label><input id="RecupereLangue" class="border" type="text"></div>
+                            <div><label for="">Langue</label><input id="RecupereLangue" class="border shadow-md rounded border-gray-500" type="text"></div>
                             <div class="pt-4"><button id="BoutonLangue" class="bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Competence</button></div>
                        </div>
                           
@@ -166,11 +168,11 @@
                 </div>
             </div>
             <!--fin section 1-->
-            
+        </form>  
         </div>
          <!----------------------------------------mon cv------------------>
-        <div id="Moncv" class=" relative pr-6">
-            <div class=" relative top-40 h-[35mm] m-2 max-w-[210mm] bg-[#18499a]">
+        <div id="Moncv" class="w-[148mm] h-[210mm] overflow-auto transform transition-transform duration-300 hover:scale-110">
+            <div class=" relative top-40 h-[35mm] m-2 max-w-[210mm]  bg-[#18499a]">
                 <div class="grid grid-cols-[20%_80%] gap-8 p-2 m-4">
                     <div class="pt-2"><img id="previewImage"  class="border-3 border-white  w-24 h-24 rounded-full" src="images/img_bannier.jpg" alt=""></div>
                     <div class="text-white">
@@ -234,9 +236,19 @@
                        <!--Formation-->
                     <div>
                         <div id="foma" class="hidden p-1 w-24 bg-[#1da876]"><h1 class="font-bold" >Formation</h1></div>
-                        <ul id="AfficheFormation" class="text-black text-[12px] break-words">
-                        
-                        </ul>
+                            <div class="flex">
+                                <div>
+                                    <ul id="AfficheFormation" class="text-black text-[15px] break-words">
+                                       
+                                       
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul id="AfficheFormation2" class="absolute right-0 text-black text-[12px] break-words">
+                                        
+                                    </ul>
+                                </div>
+                            </div>
                          </div>
                     </div>
                 </div>

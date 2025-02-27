@@ -25,14 +25,14 @@
             <!-- Menu Desktop -->
             <nav class="bg-[#e7f6f1] justify-center rounded-lg text-center md:w-[350px] md:p-[5px] hidden md:flex space-x-6 text-[#0da876]">
                 <a href="Acueil.html" class="hover:text-[#16428b]">Accueil</a>
-                <a href="" class="hover:text-[#16428b]">cv</a>
+                <a id="openModal" href="florette/inscription.html" class="hover:text-[#16428b]">cv</a>
                 <a href="#" class="hover:text-[#16428b]">Lettre de motivation</a>
-                <a href="#" class="hover:text-[#16428b]">Contact</a>
+                <a href="florette/contact.html" class="hover:text-[#16428b]">Contact</a>
             </nav>
 
             <!-- Bouton Connexion (Visible sur tous les écrans) -->
             <div class="hidden md:block">
-                <a href="#" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                <a href="#" onclick="document.getElementById('loginModal').classList.remove('hidden')" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
                     Connexion
                 </a>
             </div>
@@ -70,7 +70,7 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
             <!-- Partie gauche (Titre, Sous-texte, Bouton) -->
             <div class="md:text-left md:w-1/2 text-center">
-                <h1 class="text-4xl text-[#16428b] font-bold mb-4">Bienvenue sur WebNova, l’outil idéal pour créer votre CV en ligne !</h1>
+                <h1 class=" text-4xl text-[#16428b] font-bold mb-4">Bienvenue sur WebNova, l’outil idéal pour créer votre CV en ligne !</h1>
                 <p class="text-lg text-black mb-6">Créez un CV professionnel en quelques minutes et boostez votre carrière !</p>
                 <div class="text-center">
                     <a href="#" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
@@ -97,7 +97,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Avantage 1 : Facilité d'accès -->
-                <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div class="animate-spin flex flex-col items-center bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                     <i class="fas fa-laptop-code text-4xl text-[#0da876] mb-4"></i>
                     <h3 class="font-bold text-xl text-[#16428b] mb-2">Accessibilité</h3>
                     <p class="text-base text-gray-600">Un CV en ligne est accessible partout, à tout moment, depuis n'importe quel appareil connecté à Internet.</p>
@@ -194,6 +194,32 @@
         </div>
     </section>
     
+    <div id="loginModal" class="fixed inset-0 flex items-center justify-center  backdrop-blur-md hidden">
+        <div class="bg-white p-6 rounded shadow-lg w-96">
+            <div class="flex justify-between items-center border-b pb-2 mb-4">
+                <h5 class="text-lg font-bold text-blue-600">Bienvenue</h5>
+                <button onclick="document.getElementById('loginModal').classList.add('hidden')">&times;</button>
+            </div>
+            <p class="mb-4">Connectez-vous à votre compte</p>
+            <form>
+                <div class="mb-3">
+                    <label class="block text-sm font-medium">Nom d'utilisateur</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Entrez votre nom d'utilisateur">
+                </div>
+                <div class="mb-3">
+                    <label class="block text-sm font-medium">Mot de passe</label>
+                    <input type="password" class="w-full p-2 border rounded" placeholder="Mot de passe">
+                </div>
+                <div class="text-right mb-3">
+                    <a href="#" class="text-red-500 text-sm">Mot de passe oublié</a>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">Se connecter</button>
+            </form>
+            <div class="text-center mt-4">
+                <p>Pas encore de compte ? <a href="florette/inscription.html" class="text-blue-600">Créer un compte</a></p>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-[#16428b]  text-white py-10">

@@ -59,10 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //----------
+const img=document.getElementById("iconeclic");
 
 document.getElementById("informationPerso").addEventListener("click",function(){
     document.getElementById("cacheI").classList.toggle("hidden");
-})
+    
+});
 document.getElementById("informationPerso2").addEventListener("click",function(){
     document.getElementById("cache2").classList.toggle("hidden");
 })
@@ -195,6 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // gerere formation
 const BoutonFormation =document.getElementById("BoutonFormation");
 const AfficheFormation=document.getElementById("AfficheFormation");
+const AfficheFormation2=document.getElementById("AfficheFormation2");
 BoutonFormation.addEventListener("click", function(event) {
     event.preventDefault();
     
@@ -207,10 +210,12 @@ BoutonFormation.addEventListener("click", function(event) {
         return;
     }
     let NouvelleFormation = document.createElement("li");
-    
-    NouvelleFormation.innerHTML = `<strong>${diplome}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>${DateFormation}</strong> <br> ${Etablissemnt}`;
-
+    let NouvelleFormation2 = document.createElement("li");
+    let x=" ";
+    NouvelleFormation.innerHTML = `<strong>${diplome}</strong><br>${Etablissemnt}`;
+    NouvelleFormation2.innerHTML = `<strong>${DateFormation}</strong>`+"<br> &nbsp;";
     document.getElementById("AfficheFormation").appendChild(NouvelleFormation);
+    document.getElementById("AfficheFormation2").appendChild(NouvelleFormation2);
     document.getElementById("diplome").value = "";
     document.getElementById("DateFormation").value = "";
     document.getElementById("Etablissemnt").value = "";
@@ -280,3 +285,45 @@ document.getElementById("telechager").addEventListener("click", function() {
     });
 });
 // gerer la sauvergarde
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Charger les valeurs sauvegardées au chargement de la page
+    //affichage sur le inpout
+    document.getElementById("Recupere-Nom").value = localStorage.getItem("nom") || "";
+    document.getElementById("Recupere-Prenom").value = localStorage.getItem("prenom") || "";
+    document.getElementById("RecupereMail").value = localStorage.getItem("email") || "";
+    document.getElementById("Recupere-profil").value= localStorage.getItem("poste")|| "";
+    document.getElementById("Telephone").value=localStorage.getItem("Telephone")|| "";
+    document.getElementById("RecuperePoste").value = localStorage.getItem("RecuperePoste");
+    // affiche sur le cv 
+    document.getElementById("AfficheNom").innerHTML=localStorage.getItem("nom") || "";
+    document.getElementById("AfficheMail").innerHTML=localStorage.getItem("email") ;
+    document.getElementById("AffichePrenom").innerHTML=localStorage.getItem("prenom") || "";
+    document.getElementById("AfficheProfil").innerHTML=localStorage.getItem("poste") || "";
+    document.getElementById("AfficheTel").innerHTML=localStorage.getItem("Telephone")|| "";
+    document.getElementById("AffichePoste").innerHTML= localStorage.getItem("RecuperePoste");
+});
+
+function sauvegarder() {
+    // Récupérer les valeurs des inputs
+    let nom = document.getElementById("Recupere-Nom").value;
+    let prenom = document.getElementById("Recupere-Prenom").value;
+    let email = document.getElementById("RecupereMail").value;
+    let poste = document.getElementById("Recupere-profil").value;
+    let Telephone = document.getElementById("Telephone").value;
+    let RecuperePoste = document.getElementById("RecuperePoste").value;
+    // Stocker dans localStorage avec les mêmes clés utilisées pour la récupération
+    localStorage.setItem("nom", nom);
+    localStorage.setItem("prenom", prenom);
+    localStorage.setItem("email", email);
+    localStorage.setItem("poste", poste);
+    localStorage.setItem("Telephone",Telephone);
+    localStorage.setItem("RecuperePoste",RecuperePoste);
+
+    alert("Données sauvegardées !");
+    
+}
+
+
+
+
