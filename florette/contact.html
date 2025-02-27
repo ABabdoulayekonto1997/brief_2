@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar WebNova</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="container mx-auto flex items-center justify-between py-4">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <a href="#"><img src="logo1.png" alt="Logo1" class="w-25 h-20 mr-10"></a>
+        </div>
+
+        <!-- Menu de navigation -->
+        <div class="bg-green-100 rounded-full px-6 py-2 flex space-x-6 shadow-md">
+            <a href="#" class="text-green-700 font-medium hover:underline">Accueil</a>
+            <a href="#" class="text-green-900 font-bold hover:underline">Cv</a>
+            <a href="#" class="text-green-700 font-medium hover:underline">Lettre de motivation</a>
+            <a href="#" class="text-green-700 font-medium hover:underline">Contact</a>
+        </div>
+
+        <!-- Bouton de connexion -->
+        <a href="#" class="border border-gray-300 rounded-full px-4 py-2 text-gray-700 hover:bg-gray-200">
+            Connexion
+        </a>
+    </nav>
+
+<section class="relative w-full h-[300px] md:h-[400px] flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('./contact.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+</section>   
+<section class="container mx-auto my-10 px-4">
+    <h2 class="text-center text-2xl md:text-3xl font-bold text-blue-900 mb-6">
+        Contact information
+    </h2>
+
+    <div class="flex flex-col md:flex-row bg-gray-100 rounded-lg shadow-lg p-6">
+        <!-- Formulaire -->
+        <div class="w-full md:w-1/2 bg-white rounded-lg p-6 shadow-md">
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium">Name</label>
+                    <input type="text" class="w-full border border-gray-300 rounded-md p-2">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium">Surname</label>
+                    <input type="text" class="w-full border border-gray-300 rounded-md p-2">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium">Email</label>
+                    <input type="email" class="w-full border border-gray-300 rounded-md p-2">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium">Message</label>
+                    <textarea class="w-full border border-gray-300 rounded-md p-2"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-900 text-white py-2 rounded-md hover:bg-blue-700">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+        <!-- Informations de contact -->
+        <div class="w-full md:w-1/2 flex flex-col justify-center p-6 text-gray-700 text-right items-end">
+            <div class="flex items-center mb-4">
+                <p class="flex items-center text-sm mb-2">
+                <a href="#"><img src="whatsapp.jpg" alt="whatsapp" class="w-12 h-12 ml-2"></a> +237 657 31 34 89 </p>
+            </div>
+        
+            <div class="flex items-center mb-4">
+                <p class="flex items-center text-sm mb-2">
+                <a href="#"><img src="telephone.jpg" alt="Telephone" class="w-12 h-12 ml-2"></a> +237 668 99 99 46 </p>
+            </div>
+        
+            <div class="flex items-center mb-4">
+                <p class="flex items-center text-sm mb-2">
+                <a href="#"><img src="email.jpg" alt="Email" class="w-12 h-12 ml-2"></a> Mahamatkonto24@gmail.com </p> 
+            </div>
+        
+            <div class="flex items-center">
+                <p class="flex items-center text-sm mb-2">
+                <a href="#"><img src="email.jpg" alt="email" class="w-12 h-12 ml-2"></a> Mahamatkonto24@gmail.com </p> 
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container mx-auto my-10 px-4">
+    <!-- Map Section -->
+    <div class="container-fluid">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9997941300765!2d2.292292315674758!3d48.85837397928737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzMwLjEiTiAywrAxNyc0Ny4yIkU!5e0!3m2!1sen!2sfr!4v1623948989615!5m2!1sen!2sfr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+<footer class="bg-blue-900 text-white py-8">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Section WebNova -->
+        <div>
+            <div class="flex items-center mb-4">
+                <a href="#"><img src="logo.png" alt="Logo" class="w-25 h-20 mr-10"></a>
+            </div>
+            <p class="text-sm">
+                WebNova est un site de carrière alimenté par des experts en carrière,
+                avec des millions de lecteurs chaque année. Nous partageons des conseils,
+                des outils et des connaissances pour vous aider à trouver l'emploi de vos rêves.
+            </p>
+        </div>
+
+        <!-- Section Nos Services -->
+        <div>
+            <h3 class="font-bold text-lg mb-4">NOS SERVICES</h3>
+            <ul class="text-sm space-y-2">
+                <li>Conception de CV</li>
+                <li>Conception de lettre de motivation</li>
+            </ul>
+        </div>
+
+        <!-- Section Liens Utiles -->
+        <div>
+            <h3 class="font-bold text-lg mb-4">LIENS UTILES</h3>
+            <ul class="text-sm space-y-2">
+                <li><a href="#" class="hover:underline">Accueil</a></li>
+                <li><a href="#" class="hover:underline">CV</a></li>
+                <li><a href="#" class="hover:underline">Lettre de motivation</a></li>
+            </ul>
+        </div>
+
+        <!-- Section Contact -->
+        <div>
+            <h3 class="font-bold text-lg mb-4">CONTACT</h3>
+
+            <p class="flex items-center text-sm mb-2"> <a href="#"><img src="whatsapp.jpg" alt="whatsapp" class="w-5 h-5"></a> +237 657 31 34 89</p> 
+
+            <p class="flex items-center text-sm mb-2"> <a href="#"></a><a href="#"><img src="telephone.jpg" alt="Telephone" class="w-5 h-5"></a> +237 668 99 99 46</p> 
+        </div>
+    </div>
+
+    <!-- Bas de page -->
+    <div class="border-t border-gray-600 mt-6 pt-4 text-center text-sm">
+        <p>2020 Estates. All rights reserved | Designed by <a href="#" class="text-blue-300 hover:underline">AKM Design</a></p>
+        <!-- Icônes Réseaux Sociaux -->
+        <div class="flex justify-center space-x-4 mt-2">
+            <a href="#"><img src="facebook.png" alt="Facebook" class="w-5 h-5"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram" class="w-5 h-5"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter" class="w-5 h-5"></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

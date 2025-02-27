@@ -20,16 +20,21 @@
             <!-- Bouton Retour avec flèche -->
             <div class="text-2xl text-white font-bold cursor-pointer flex items-center space-x-2 hover:text-gray-200 transition-all duration-300" onclick="history.back()">
                 <a href="user.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
+                    <a href="user.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </a>
+                    <h2 class="text-sm md:text-base">Retour</h2>
                 </a>
-                <h2 class="text-sm md:text-base">Retour</h2>
             </div>
     
             <!-- Image circulaire + Icône (Desktop et Mobile) -->
             <div class="flex items-center space-x-3">
                 <!-- Bouton Télécharger -->
+                <button id="sauvergader"  download class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                    sauvergader
+                </button>
                 <button id="telechager"  download class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
                     Télécharger
                 </button>
@@ -47,9 +52,9 @@
     
     <h2 class="pt-24 text-center text-2xl sm:text-2xl md:text-3xl font-semibold text-[#16428b] mb-6">Créer votre cv pro en visulisant de maniere instanné</h2>
    
-    <div class=" grid grid-cols-1 md:grid-cols-2 gap-12 p-12">
+    <div class=" grid  md:grid-cols-[50%_50%] gap-12 p-12">
         <!--section 1-->
-        <div class="w-[600px] ">
+        <div>
             <!--information personelle-->
             <div class="items-center bg-white shadow-md rounded-lg p-3">
                 <div class="flex">
@@ -164,7 +169,7 @@
             
         </div>
          <!----------------------------------------mon cv------------------>
-        <div id="Moncv" class="relative botom-40">
+        <div id="Moncv" class=" relative pr-6">
             <div class=" relative top-40 h-[35mm] m-2 max-w-[210mm] bg-[#18499a]">
                 <div class="grid grid-cols-[20%_80%] gap-8 p-2 m-4">
                     <div class="pt-2"><img id="previewImage"  class="border-3 border-white  w-24 h-24 rounded-full" src="images/img_bannier.jpg" alt=""></div>
