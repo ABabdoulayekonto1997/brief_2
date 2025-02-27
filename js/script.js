@@ -192,11 +192,90 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-const diplome =document.getElementById("diplome");
-const DateFormation =document.getElementById("DateFormation");
-const Etablissemnt =document.getElementById("Etablissemnt");
+// gerere formation
 const BoutonFormation =document.getElementById("BoutonFormation");
-RecupereEltformation
-BoutonFormation.addEventListener("click").addEventListener(function(){
+const AfficheFormation=document.getElementById("AfficheFormation");
+BoutonFormation.addEventListener("click", function(event) {
+    event.preventDefault();
     
+    document.getElementById("foma").classList.remove("hidden");
+    const diplome =document.getElementById("diplome").value;
+    const DateFormation =document.getElementById("DateFormation").value;
+    const Etablissemnt =document.getElementById("Etablissemnt").value;
+    if (!diplome || !DateFormation || !Etablissemnt) {
+        alert("Veuillez remplir tous les champs !");
+        return;
+    }
+    let NouvelleFormation = document.createElement("li");
+    
+    NouvelleFormation.innerHTML = `<strong>${diplome}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>${DateFormation}</strong> <br> ${Etablissemnt}`;
+
+    document.getElementById("AfficheFormation").appendChild(NouvelleFormation);
+    document.getElementById("diplome").value = "";
+    document.getElementById("DateFormation").value = "";
+    document.getElementById("Etablissemnt").value = "";
+});
+// gerere competence
+let BoutonCompetence = document.getElementById("BoutonCompetence");
+let AfficheCompetence = document.getElementById("AfficheCompetence");
+let RecupereCompetence = document.getElementById("RecupereCompetence");
+BoutonCompetence.addEventListener("click",function(event){
+    event.preventDefault();
+    if(!RecupereCompetence.value){
+        alert("Veuillez remplir une competences !");
+        return;
+    }
+    document.getElementById("compet").classList.remove("hidden");
+    let NouvelleCompetence= document.createElement("li");
+    NouvelleCompetence.innerHTML=RecupereCompetence.value;
+    
+    AfficheCompetence.appendChild(NouvelleCompetence);
+    RecupereCompetence.value="";
 })
+// gerer Langue
+let BoutonLangue = document.getElementById("BoutonLangue");
+let AfficheLangue = document.getElementById("AfficheLangue");
+let CacheLangue = document.getElementById("CacheLangue");
+let RecupereLangue= document.getElementById("RecupereLangue");
+BoutonLangue.addEventListener("click",function(event){
+    document.getElementById("lang").classList.remove("hidden");
+    if(!RecupereLangue.value){
+        alert("Veuillez remplir une langue !");
+        return;
+    }
+    let NouvelleLangue= document.createElement("li");
+    NouvelleLangue.innerHTML=RecupereLangue.value;
+    AfficheLangue.appendChild(NouvelleLangue);
+    RecupereLangue.value="";
+})
+// gerer Loisir
+let AfficheLoisir = document.getElementById("AfficheLoisir");
+let RecupereLoisir = document.getElementById("RecupereLoisir");
+BoutonLoisir = document.getElementById("BoutonLoisir").addEventListener("click",function(event){
+    document.getElementById("CacheLoisir").classList.remove("hidden");
+    if(!RecupereLoisir.value){
+        alert("Veuillez remplir une loisir !");
+        return;
+    }
+    let NouvelleLoisir = document.createElement("li");
+    NouvelleLoisir.innerHTML=RecupereLoisir.value;
+    AfficheLoisir.appendChild(NouvelleLoisir);
+    RecupereLoisir.value="";
+})
+// gerer telechargement cv
+document.getElementById("telechager").addEventListener("click", function() {
+    const { jsPDF } = window.jspdf;  // Extraire jsPDF de la fenêtre globale
+    const doc = new jsPDF(); // Créer un nouvel objet jsPDF
+    
+    const content = document.getElementById("Moncv");  // Récupérer le contenu HTML à convertir
+
+    // Utiliser la méthode html() de jsPDF pour générer le PDF à partir du contenu HTML
+    doc.html(content, {
+        margin: [10, 10, 10, 10], // Marge autour du contenu
+        callback: function (doc) {
+            doc.save("MonCV.pdf"); // Télécharger le fichier PDF avec le nom souhaité
+        },
+        x: 10, // Position X du contenu dans le PDF
+        y: 10  // Position Y du contenu dans le PDF
+    });
+});
