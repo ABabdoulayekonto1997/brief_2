@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <!-- Intégration de Tailwind CSS -->
+     <link rel="stylesheet" href="src/output.css">
+    <!-- Intégration d'Alpine.js pour la gestion du menu mobile -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome pour les icônes -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header Fixe et Responsive -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center py-2 px-4">
+
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="#"><img class="w-24" src="images/logo_WebNova.png" alt="Logo WebNova"></a>
+            </div>
+
+            <!-- Menu Desktop -->
+            <nav class="bg-[#e7f6f1] justify-center rounded-lg text-center md:w-[350px] md:p-[5px] hidden md:flex space-x-6 text-[#0da876]">
+                <a href="Acueil.html" class="hover:text-[#16428b]">Accueil</a>
+                <a id="openModal" href="florette/inscription.html" class="hover:text-[#16428b]">cv</a>
+                <a href="#" class="hover:text-[#16428b]">Lettre de motivation</a>
+                <a href="florette/contact.html" class="hover:text-[#16428b]">Contact</a>
+            </nav>
+
+            <!-- Bouton Connexion (Visible sur tous les écrans) -->
+            <div class="hidden md:block">
+                <a href="#" onclick="document.getElementById('loginModal').classList.remove('hidden')" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                    Connexion
+                </a>
+            </div>
+
+            <!-- Menu Mobile (Burger) -->
+            <div class="md:hidden" x-data="{ open: false }">
+                <button @click="open = !open" class="text-gray-700 focus:outline-none">
+                    <svg x-show="!open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                    <svg x-show="open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <!-- Menu Mobile -->
+                <div x-show="open" class="absolute top-16 left-0 w-full bg-white shadow-md">
+                    <nav class="flex flex-col items-center space-y-4 py-4">
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Accueil</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Services</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">À propos</a>
+                        <a href="#" class="text-[#0da876] hover:text-[#16428b]">Contact</a>
+                        <a href="#" class="hover:text-white text-[#16428b] px-4 py-2 shadow-md rounded-lg hover:bg-[#16428b]">
+                            Connexion
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Section baniere -->
+    <section class="bg-[#e7f6f1] pt-32 py-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <!-- Partie gauche (Titre, Sous-texte, Bouton) -->
+            <div class="md:text-left md:w-1/2 text-center">
+                <h1 class=" text-4xl text-[#16428b] font-bold mb-4">Bienvenue sur WebNova, l’outil idéal pour créer votre CV en ligne !</h1>
+                <p class="text-lg text-black mb-6">Créez un CV professionnel en quelques minutes et boostez votre carrière !</p>
+                <div class="text-center">
+                    <a href="#" class="bg-white text-[#16428b] shadow-md px-4 py-2 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">
+                        Créer votre CV maintenant
+                    </a>
+                </div>
+            </div>
+
+            <!-- Partie droite (Image avec effet hover) -->
+            <div class="mt-8 md:mt-0 md:w-1/2">
+                <img src="images/img_bannier.jpg" alt="Image de la bannière" class="w-full h-auto rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-[0_6px_20px_rgba(0,218,118,0.6)] hover:brightness-75" loading="lazy">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section avantages de cv -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Texte centré -->
+            <h2 class="text-3xl font-semibold text-[#16428b] mb-6">Les Avantages de Créer un CV en Ligne</h2>
+            <p class="text-lg text-black mb-12">Un CV en ligne vous permet de vous démarquer et d'accéder à des opportunités professionnelles plus rapidement.</p>
+    
+            <!-- Les trois divs avec icônes et texte -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Avantage 1 : Facilité d'accès -->
+                <div class="animate-spin flex flex-col items-center bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <i class="fas fa-laptop-code text-4xl text-[#0da876] mb-4"></i>
+                    <h3 class="font-bold text-xl text-[#16428b] mb-2">Accessibilité</h3>
+                    <p class="text-base text-gray-600">Un CV en ligne est accessible partout, à tout moment, depuis n'importe quel appareil connecté à Internet.</p>
+                </div>
+    
+                <!-- Avantage 2 : Mise à jour facile -->
+                <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <i class="fas fa-edit text-4xl text-[#0da876] mb-4"></i>
+                    <h3 class="font-bold text-xl text-[#16428b] mb-2">Mise à jour rapide</h3>
+                    <p class="text-base text-gray-600">Il est facile de mettre à jour votre CV en ligne pour y ajouter de nouvelles expériences et compétences.</p>
+                </div>
+    
+                <!-- Avantage 3 : Professionnalisme -->
+                <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <i class="fas fa-briefcase text-4xl text-[#0da876] mb-4"></i>
+                    <h3 class="font-bold text-xl text-[#16428b] mb-2">Professionnalisme</h3>
+                    <p class="text-base text-gray-600">Un CV en ligne reflète un niveau de professionnalisme moderne et vous permet de vous démarquer des autres candidats.</p>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section nos modele -->
+    <section class="py-16">
+        <h2 class="text-center text-3xl font-semibold text-[#16428b] mb-6">Nos modeles</h2>
+        <div class="container mx-auto px-6">
+            <div class="relative">
+                <!-- Carousel Wrapper (Taille ajustée pour 2 images en A5) -->
+                <div class="carousel relative w-[840px] h-[595px] overflow-hidden rounded-lg shadow-lg">
+                    <!-- Carousel Images -->
+                    <div class="carousel-inner flex transition-transform duration-1000 ease-in-out" id="carousel-items">
+                        <div class="carousel-item w-[420px] h-[595px] bg-cover bg-center flex-shrink-0"
+                            style="background-image: url('images/cv1.png');"></div>
+                        <div class="carousel-item w-[420px] h-[595px] bg-cover bg-center flex-shrink-0"
+                            style="background-image: url('images/CV2.jpg');"></div>
+                        <div class="carousel-item w-[420px] h-[595px] bg-cover bg-center flex-shrink-0"
+                            style="background-image: url('images/CV3.jpg');"></div>
+                        <div class="carousel-item w-[420px] h-[595px] bg-cover bg-center flex-shrink-0"
+                            style="background-image: url('images/CV4.jpg');"></div>
+                        <div class="carousel-item w-[420px] h-[595px] bg-cover bg-center flex-shrink-0"
+                            style="background-image: url('images/CV5.jpg');"></div>
+                        <div class="carousel-item w-[420px] h-[595px] bg-cover bg-center flex-shrink-0"
+                            style="background-image: url('images/CV6.jpg');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full pb-8 max-w-3xl mt-20 mx-auto">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl text-center font-semibold text-[#16428b] mb-6">Témoignage de nos utilisateurs</h2>
+            <div class="relative bg-white p-12 shadow-xl rounded-lg text-center w-full h-72 flex flex-col justify-center">
+                <!-- Témoignages Wrapper -->
+                <div class="overflow-hidden relative">
+
+                    <div class="flex transition-transform duration-500 ease-in-out" id="testimonial-container">
+                        <!-- Témoignage 1 -->
+                        <div class="testimonial w-full flex-shrink-0">
+                            <div class="flex items-center justify-center mb-4">
+                                <img src="images/CV3.jpg" alt="Marie Dupont" class="w-20 h-20 rounded-full shadow-lg mr-4">
+                                <h4 class="text-xl font-bold text-gray-900">Marie Dupont</h4>
+                            </div>
+                            <p class="text-gray-700 italic text-lg">"Ce service m'a énormément aidé dans ma recherche d'emploi."</p>
+                        </div>
+                        <!-- Témoignage 2 -->
+                        <div class="testimonial w-full flex-shrink-0">
+                            <div class="flex items-center justify-center mb-4">
+                                <img src="images/CV2.jpg" alt="Jean Martin" class="w-20 h-20 rounded-full shadow-lg mr-4">
+                                <h4 class="text-xl font-bold text-gray-900">Jean Martin</h4>
+                            </div>
+                            <p class="text-gray-700 italic text-lg">"Un site très intuitif et facile à utiliser, je recommande !"</p>
+                        </div>
+                        <!-- Témoignage 3 -->
+                        <div class="testimonial w-full flex-shrink-0">
+                            <div class="flex items-center justify-center mb-4">
+                                <img src="images/cv1.png" alt="Sophie Leroy" class="w-20 h-20 rounded-full shadow-lg mr-4">
+                                <h4 class="text-xl font-bold text-gray-900">Sophie Leroy</h4>
+                            </div>
+                            <p class="text-gray-700 italic text-lg">"Grâce à ce service, j'ai trouvé un emploi rapidement."</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Contrôles aux extrémités -->
+                <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2  text-white px-4 py-2 rounded-full shadow-md">
+                    <img class="w-8" src="images/fleche_gauche.png" alt="">
+                </button>
+                <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2  text-white px-4 py-2 rounded-full shadow-md">
+                    <img class="w-8" src="images/Fleche _droite.png" alt="">
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <div id="loginModal" class="fixed inset-0 flex items-center justify-center  backdrop-blur-md hidden">
+        <div class="bg-white p-6 rounded shadow-lg w-96">
+            <div class="flex justify-between items-center border-b pb-2 mb-4">
+                <h5 class="text-lg font-bold text-blue-600">Bienvenue</h5>
+                <button onclick="document.getElementById('loginModal').classList.add('hidden')">&times;</button>
+            </div>
+            <p class="mb-4">Connectez-vous à votre compte</p>
+            <form>
+                <div class="mb-3">
+                    <label class="block text-sm font-medium">Nom d'utilisateur</label>
+                    <input type="text" class="w-full p-2 border rounded" placeholder="Entrez votre nom d'utilisateur">
+                </div>
+                <div class="mb-3">
+                    <label class="block text-sm font-medium">Mot de passe</label>
+                    <input type="password" class="w-full p-2 border rounded" placeholder="Mot de passe">
+                </div>
+                <div class="text-right mb-3">
+                    <a href="#" class="text-red-500 text-sm">Mot de passe oublié</a>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">Se connecter</button>
+            </form>
+            <div class="text-center mt-4">
+                <p>Pas encore de compte ? <a href="florette/inscription.html" class="text-blue-600">Créer un compte</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#16428b]  text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-6 pb-6 text-center md:text-left">
+                <div class="flex justify-center md:justify-start">
+                    <img class="w-16" src="images/logo_footer_bleu.png" alt="Logo WebNova">
+                </div>
+                <p class="text-xl font-medium mt-4 md:mt-0">L’énergie est notre avenir, économique</p>
+            </div>
+
+            <!-- Sections d'information -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">À PROPOS</h1>
+                    <p>WebNova est un site de carrière alimenté par des experts en carrière, avec des millions de lecteurs chaque année.</p>
+                </div>
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">NOS SERVICES</h1>
+                    <p class="hover:text-gray-300 cursor-pointer">CV</p>
+                    <p class="hover:text-gray-300 cursor-pointer">Lettre de motivation</p>
+                </div>
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">CONTACT</h1>
+                    <p>Email: <a href="mailto:Mahamatkonto24@gmail.com" class="hover:text-gray-300">Mahamatkonto24@gmail.com</a></p>
+                    <p>Téléphone: <a href="tel:+123456789" class="hover:text-gray-300">+123 456 789</a></p>
+                </div>
+                <div class="p-4">
+                    <h1 class="font-bold text-lg mb-2">SUIVEZ-NOUS</h1>
+                    <div class="flex justify-center md:justify-start space-x-6 text-2xl md:text-3xl">
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="js/script.js"></script>
+</body>
+</html>
