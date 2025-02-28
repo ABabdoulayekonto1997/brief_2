@@ -638,6 +638,9 @@
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
+  .right-220 {
+    right: calc(var(--spacing) * 220);
+  }
   .bottom-4 {
     bottom: calc(var(--spacing) * 4);
   }
@@ -1184,6 +1187,9 @@
   .w-96 {
     width: calc(var(--spacing) * 96);
   }
+  .w-\[10px\] {
+    width: 10px;
+  }
   .w-\[21rem\] {
     width: 21rem;
   }
@@ -1616,6 +1622,9 @@
   }
   .grid-cols-\[30\%_70\%\] {
     grid-template-columns: 30% 70%;
+  }
+  .grid-cols-\[70\%_30\%\] {
+    grid-template-columns: 70% 30%;
   }
   .grid-cols-none {
     grid-template-columns: none;
@@ -2433,6 +2442,9 @@
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
+  }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
@@ -2462,6 +2474,18 @@
   }
   .pr-6 {
     padding-right: calc(var(--spacing) * 6);
+  }
+  .pr-12 {
+    padding-right: calc(var(--spacing) * 12);
+  }
+  .pr-18 {
+    padding-right: calc(var(--spacing) * 18);
+  }
+  .pr-24 {
+    padding-right: calc(var(--spacing) * 24);
+  }
+  .pr-32 {
+    padding-right: calc(var(--spacing) * 32);
   }
   .pr-\[3\%\] {
     padding-right: 3%;

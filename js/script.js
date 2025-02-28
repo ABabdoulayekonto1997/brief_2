@@ -324,6 +324,27 @@ function sauvegarder() {
     
 }
 
+// gerer telechargement 
 
-
+        document.getElementById('telechager').addEventListener('click', function () {
+            const { jsPDF } = window.jspdf;
+    
+            // Sélectionne la div à capturer
+            const cvElement = document.getElementById('Moncv');
+    
+            // Utilise html2canvas pour capturer la div sous forme d'image
+            html2canvas(cvElement, { scale: 2 }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png'); // Convertir le canvas en image
+                const pdf = new jsPDF('p', 'mm', 'a4'); // Créer un document PDF
+    
+                // Calcul de la taille optimale
+                const imgWidth = 210; // Largeur A4 en mm
+                const pageHeight = 297; // Hauteur A4 en mm
+                const imgHeight = (canvas.height * imgWidth) / canvas.width; // Hauteur ajustée pour conserver les proportions
+    
+                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                pdf.save('cv.pdf'); // Télécharger le PDF
+            });
+        });
+    
 
