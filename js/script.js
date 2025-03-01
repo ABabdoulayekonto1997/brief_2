@@ -106,11 +106,7 @@ const affichagePrenom = document.getElementById("AffichePrenom");
 RecupNom.addEventListener("input",function(event){
     let valeur=RecupNom.value;
     affichageNom.innerHTML=valeur;
-})
-RecupPrenom.addEventListener("input",function(event){
-    let valeur=RecupPrenom.value;
-    affichagePrenom.innerHTML=valeur;
-})
+});
 // recucerper la valeur du telephone et date
 const RecupTel = document.getElementById("Telephone");
 const RecupDate = document.getElementById("Date");

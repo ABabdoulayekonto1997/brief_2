@@ -51,9 +51,9 @@
         </div>
     </header>
     
-    <h2 class="pt-24 text-center text-2xl sm:text-2xl md:text-3xl font-semibold text-[#16428b] mb-6">Créer votre cv pro en visulisant de maniere instanné</h2>
+    <h2 class="pt-24 text-center text-2xl sm:text-2xl md:text-4xl font-semibold text-[#16428b] mb-6">Créer votre cv pro en visulisant de maniere instanné</h2>
    <!----------------------------------------disposition de lespace saisi cv et affichage cv------------------>
-   <div class="grid grid-cols-1 w-full ms:w-full md:w-full sm:grid-cols-1 md:grid-cols-[50%_50%] gap-12 p-2">
+   <div class="w-full sm:w-full xl:w-full md:w-auto grid grid-cols-1  sm:grid-cols-1 md:grid-cols-[50%_50%] xl:grid-cols-[50%_50%] gap-12 p-2">
     <!----------------------------------------disposition de l'espace saisi cv------------------>
        <div>
              <!--information personelle-->
@@ -62,28 +62,27 @@
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Information Professionnel</h2>
                 <img id="iconeclic" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
-                <div id="cacheI"  class="hidden grid grid-cols-2 sm:grid-cols-2  md:grid-cols-3 gap-3">
+                <div id="cacheI"  class="hidden grid grid-cols-1 sm:grid-cols-1  md:grid-cols-3 gap-3">
                     
                     <div >
-                        <h2 class="text-center ">Inserer votre vophoto</h2>
-                        <div id="uploadBtn" class=" flex justify-center items-center shadow-md rounded border-gray-500 w-full w-auto">
+                        <h2 class="text-center ">Inserer votre photo</h2>
+                        <div id="uploadBtn" class=" flex justify-center items-center shadow-md rounded  w-auto w-auto">
                             <input type="file" id="imageInput"  class="hidden">
                             <img class="w-16 h-16" src="images/OIP.jpeg" alt="">
                        </div>
-                        <div><label for="">Poste</label><input id="RecuperePoste" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>  
+                        <div><label for="">Poste</label><input id="RecuperePoste" placeholder="Entrez votre poste" class="p-1 border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>  
                     </div>
                     
                     <div>
-                        <div><label for="">Nom</label><input  id="Recupere-Nom" class="p-2 border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
-                        <div><label for="">Telephone</label><input id="Telephone" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="number"></div>
-                        <div><label for="">Mail</label><input id="RecupereMail" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="email"></div>
+                        <div><label for="">Nom</label><input  id="Recupere-Nom" placeholder="Entrez votre nom" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>
+                        <div><label for="">Telephone</label><input id="Telephone" placeholder="Entrez votre number de telephone" class="p-1 border w-full md:w-auto shadow-md rounded border-gray-500" type="number"></div>
+                        <div><label for="">Mail</label><input id="RecupereMail" class="p-1 border w-full md:w-auto shadow-md rounded border-gray-500" type="email"></div>
                     </div>
                     
                     <div>
-                        <div><label for="">Prenom</label><input id="Recupere-Prenom" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
-                        <div><label for="">Date de naissance</label><input id="Date" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="date"></div>
-  
-                        <div><label for="">Adresse</label><input id="RecupereAdress" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
+                        <div><label for="">Prenom</label><input id="Recupere-Prenom" placeholder="Entrez votre prenom"  class="p-1 border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
+                        <div><label for="">Date de naissance</label><input id="Date" placeholder="Entrez votre date de naissance" class="p-1 border w-full md:w-auto shadow-md rounded border-gray-500" type="date"></div>
+                        <div><label for="">Adresse</label><input id="RecupereAdress" placeholder="Entrez votre Adresse" class="p-1 border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
         
                     </div>
                     
@@ -97,7 +96,7 @@
                 <img id="informationPerso2" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
                 <div id="cache2"  class="hidden grid grid-cols-1 ">
-                    <textarea  class="pt-2 border" name="" id="Recupere-profil"></textarea>
+                    <textarea placeholder="Decrire votre profil" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" name="" id="Recupere-profil"></textarea>
                     
                 </div>
             </div>
@@ -105,25 +104,26 @@
             <div class="items-center bg-white shadow-md rounded-lg p-3">
                 <div class="flex cursor-pointer">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Formation</h2>
-                <img id="informationPerso3" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                     <img id="informationPerso3" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                 </div>
+           
+                <div id="cache3" class="hidden w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-3">
+    
+                    <div>
+                        <div><label for="">Diplome</label><input  id="diplome" placeholder="Entre votre diplome" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>
+                        <div><label for="">Année</label><input  id="DateFormation" placeholder="Entre votre année de naissance" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>    
+                     </div>
+                    
+                    <div>
+                        <div><label for="">Etablissemnt</label><input id="Etablissemnt" placeholder="Entre le nom de votre Etablissemnt" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>    
+                    
+                        <div class="pt-6 grid md:grid-cols-[50%_50%] gap-12 ">
+                            <div><button id="BoutonFormation" class=" bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Formation</button></div>
+                            <div><img class="w-8" src="images/supprimer.svg" alt=""></div>
+                        </div>
+                    </div>    
+                
                 </div>
-            <form action="">
-                <div id="cache3"  class="hidden grid grid-cols-2 ">
-                    <div class="grid  grid-cols-2 gap-32">
-                        <div>
-                            <div><label for="">Diplome</label><input id="diplome" required placeholder="Entr votr dipmloe" class="border shadow-md rounded border-gray-500" type="text"></div>
-                            <div><label for="">Année</label><input required id="DateFormation" class="border shadow-md rounded border-gray-500" type="date"></div>
-                       </div>
-                       <div>
-                            <div><label  for="">Etablissemnt</label><input required id="Etablissemnt" class="border shadow-md rounded border-gray-500" type="text"></div><br>
-                            <div class=" flex"> <button id="BoutonFormation" class=" bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Formation</button>
-                                
-                            </div>
-                            
-                        </div>    
-                    </div>
-                </div>
-            </form>
             </div>
             <!--Compteneces--> <br>
             <div class="items-center bg-white shadow-md rounded-lg p-3">
@@ -184,7 +184,7 @@
                         <div class="pt-2"><img id="previewImage"  class="border-3 border-white  w-24 h-24 rounded-full" src="images/img_bannier.jpg" alt=""></div>
                         <div class="text-white">
                             <!--cv parti information-->
-                            <H1 class=" text-2xl"><b class="break-words" id="AfficheNom"></b>    <b></b><b class="break-words" id="AffichePrenom"></b> </H1>
+                            <H1 class=" text-2xl"><b class="break-words" id="AfficheNom"></b>    <b></b><b class="break-words" id="AffichePrenom"></b></H1>
                             <h2 class="break-words" id="AffichePoste" class="text-1xl"></h2>
                             <div class="flex items-center gap-2">
                                 <img id="ima" class="w-3 h-3 hidden" src="images/mail.png" alt="Icone de mail">
