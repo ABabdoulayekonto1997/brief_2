@@ -53,7 +53,7 @@
     
     <h2 class="pt-24 text-center text-2xl sm:text-2xl md:text-3xl font-semibold text-[#16428b] mb-6">Créer votre cv pro en visulisant de maniere instanné</h2>
    <!----------------------------------------disposition de lespace saisi cv et affichage cv------------------>
-   <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-[50%_50%] gap-12 p-2">
+   <div class="grid grid-cols-1 w-full ms:w-full md:w-full sm:grid-cols-1 md:grid-cols-[50%_50%] gap-12 p-2">
     <!----------------------------------------disposition de l'espace saisi cv------------------>
        <div>
              <!--information personelle-->
@@ -62,25 +62,32 @@
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Information Professionnel</h2>
                 <img id="iconeclic" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
-                <div id="cacheI"  class="hidden grid grid-cols-1 sm:grid-cols-1  md:grid-cols-3 gap-3">
-                    <div id="uploadBtn" class="border shadow-md rounded border-gray-500 w-40">
-                        <input type="file" id="imageInput" accept="image/*" class="hidden">
-                        <h2 class="text-center pt-6">photo</h2>
-                    </div>
-                    <div class="w-full">
-                        <div><label for="">Nom</label><input  id="Recupere-Nom" class="border shadow-md rounded border-gray-500" type="text"></div>
-                        <div><label for="">Telephone</label><input id="Telephone" class="border shadow-md rounded border-gray-500" type="number"></div>
-                    </div>
-                    <div>
-                        <div><label for="">Prenom</label><input id="Recupere-Prenom" class="border shadow-md rounded border-gray-500" type="text"></div>
-                        <div><label for="">Date de naissance</label><input id="Date" class="border shadow-md rounded border-gray-500" type="date"></div>
-                    </div>
-                    <div class="flex  gap-2 w-full">
-                        <div><label for="">Poste</label><input id="RecuperePoste" class="border shadow-md rounded border-gray-500" type="text"></div>
-                        <div><label for="">Mail</label><input id="RecupereMail" class="border shadow-md rounded border-gray-500" type="email"></div>
-                        <div><label for="">Adresse</label><input id="RecupereAdress" class="border shadow-md rounded border-gray-500" type="text"></div>
+                <div id="cacheI"  class="hidden grid grid-cols-2 sm:grid-cols-2  md:grid-cols-3 gap-3">
+                    
+                    <div >
+                        <h2 class="text-center ">Inserer votre vophoto</h2>
+                        <div id="uploadBtn" class=" flex justify-center items-center shadow-md rounded border-gray-500 w-full w-auto">
+                            <input type="file" id="imageInput"  class="hidden">
+                            <img class="w-16 h-16" src="images/OIP.jpeg" alt="">
+                       </div>
+                        <div><label for="">Poste</label><input id="RecuperePoste" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>  
                     </div>
                     
+                    <div>
+                        <div><label for="">Nom</label><input  id="Recupere-Nom" class="p-2 border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
+                        <div><label for="">Telephone</label><input id="Telephone" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="number"></div>
+                        <div><label for="">Mail</label><input id="RecupereMail" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="email"></div>
+                    </div>
+                    
+                    <div>
+                        <div><label for="">Prenom</label><input id="Recupere-Prenom" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
+                        <div><label for="">Date de naissance</label><input id="Date" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="date"></div>
+  
+                        <div><label for="">Adresse</label><input id="RecupereAdress" class="border w-full md:w-auto shadow-md rounded border-gray-500" type="text"></div>
+        
+                    </div>
+                    
+                        
                 </div>
             </div>
             <!--profil--> <br>
@@ -169,7 +176,7 @@
                 </div>
             </div>
        </div>
-<!--------------------------isposition de l'espace  affichage cv------------->
+<!--------------------------Disposition de l'espace  affichage cv------------->
         <div>
             <div id="Moncv" class="w-[148mm] h-[210mm] overflow-auto transform transition-transform duration-300 hover:scale-110">
                 <div class=" relative top-40 h-[35mm] m-2 max-w-[210mm]  bg-[#18499a]">
