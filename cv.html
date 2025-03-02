@@ -91,9 +91,9 @@
             </div>
             <!--profil--> <br>
             <div class="items-center bg-white shadow-md rounded-lg p-3">
-                <div class="flex cursor-pointer">
+                <div id="informationPerso2" class=" flex cursor-pointer">
                     <h2 class="text-[#16428b] text-1xl sm:text-1xl md:text-2xl font-semibold mr-3">Profil</h2>
-                <img id="informationPerso2" src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
+                <img  src="images/iconefleche.png" alt="Icône" class="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8 ml-auto">
                 </div>
                 <div id="cache2"  class="hidden grid grid-cols-1 ">
                     <textarea placeholder="Decrire votre profil" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" name="" id="Recupere-profil"></textarea>
@@ -117,9 +117,11 @@
                     <div>
                         <div><label for="">Etablissemnt</label><input id="Etablissemnt" placeholder="Entre le nom de votre Etablissemnt" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>    
                     
-                        <div class="pt-6 grid md:grid-cols-[50%_50%] gap-12 ">
-                            <div><button id="BoutonFormation" class=" bg-white text-[#16428b] shadow-md  w-[190px] px-1 py-1 rounded-lg hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Formation</button></div>
-                            <div><img class="w-8" src="images/supprimer.svg" alt=""></div>
+                        <div class="pt-6 grid md:grid-cols-[50%_50%]  ">
+                            <div><button id="BoutonFormation" class="text-1xl bg-white text-[#16428b] shadow-md w-full px-1 py-1 rounded-lg 
+                                text-sm md:text-base lg:text-lg 
+                                w-full md:w-auto hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Formation</button></div>
+                            <div class=""><img id="supprimerFormation" class="cursor-pointer transition-all duration-300 ease-in-out w-8" src="images/supprimer.svg" alt=""></div>
                         </div>
                     </div>    
                 
@@ -243,16 +245,15 @@
                            <!--Formation-->
                         <div>
                             <div id="foma" class="hidden p-1 w-24 bg-[#1da876]"><h1 class="font-bold" >Formation</h1></div>
-                                <div class="flex">
+                                <div class="grid grid-cols-[50%_50%] sm:grid-cols-[50%_50%] md:grid-cols-[50%_50%] ">
                                     <div>
-                                        <ul id="AfficheFormation" class="text-black text-[15px] break-words">
-                                           
+                                        <ul id="AfficheFormation" class=" text-black text-[15px] break-words">
                                            
                                         </ul>
                                     </div>
                                     <div>
                                         <ul id="AfficheFormation2" class="absolute right-0 text-black text-[12px] break-words">
-                                            
+                                         
                                         </ul>
                                     </div>
                                 </div>

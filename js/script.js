@@ -60,25 +60,97 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //----------
 const img=document.getElementById("iconeclic");
-
-document.getElementById("informationPerso").addEventListener("click",function(){
+//---------- GERER LES CLIC DS INFORMAIONS
+document.getElementById("informationPerso").addEventListener("click", function() {
     document.getElementById("cacheI").classList.toggle("hidden");
-    
+    let cache2= document.getElementById("cache2").classList.contains("hidden");
+    let cache3= document.getElementById("cache3").classList.contains("hidden");
+    let cache4= document.getElementById("cache4").classList.contains("hidden");
+    let cache5= document.getElementById("cache5").classList.contains("hidden");
+    let cache6= document.getElementById("cache6").classList.contains("hidden");
+    if ((cache2 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false) ) {
+        document.getElementById("cache2").classList.add("hidden");
+        document.getElementById("cache3").classList.add("hidden");
+        document.getElementById("cache4").classList.add("hidden");
+        document.getElementById("cache5").classList.add("hidden");
+        document.getElementById("cache6").classList.add("hidden");
+    }
 });
+
 document.getElementById("informationPerso2").addEventListener("click",function(){
     document.getElementById("cache2").classList.toggle("hidden");
+    let cache1= document.getElementById("cacheI").classList.contains("hidden");
+    let cache3= document.getElementById("cache3").classList.contains("hidden");
+    let cache4= document.getElementById("cache4").classList.contains("hidden");
+    let cache5= document.getElementById("cache5").classList.contains("hidden");
+    let cache6= document.getElementById("cache6").classList.contains("hidden");
+    if ((cache1 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false) ) {
+        document.getElementById("cacheI").classList.add("hidden");
+        document.getElementById("cache3").classList.add("hidden");
+        document.getElementById("cache4").classList.add("hidden");
+        document.getElementById("cache5").classList.add("hidden");
+        document.getElementById("cache6").classList.add("hidden");
+    }
 })
 document.getElementById("informationPerso3").addEventListener("click",function(){
     document.getElementById("cache3").classList.toggle("hidden");
+    let cache1= document.getElementById("cacheI").classList.contains("hidden");
+    let cache3= document.getElementById("cache2").classList.contains("hidden");
+    let cache4= document.getElementById("cache4").classList.contains("hidden");
+    let cache5= document.getElementById("cache5").classList.contains("hidden");
+    let cache6= document.getElementById("cache6").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false) ) {
+        document.getElementById("cacheI").classList.add("hidden");
+        document.getElementById("cache2").classList.add("hidden");
+        document.getElementById("cache4").classList.add("hidden");
+        document.getElementById("cache5").classList.add("hidden");
+        document.getElementById("cache6").classList.add("hidden");
+    }
 })
 document.getElementById("informationPerso4").addEventListener("click",function(){
     document.getElementById("cache4").classList.toggle("hidden");
+    let cache1= document.getElementById("cacheI").classList.contains("hidden");
+    let cache3= document.getElementById("cache2").classList.contains("hidden");
+    let cache4= document.getElementById("cache3").classList.contains("hidden");
+    let cache5= document.getElementById("cache5").classList.contains("hidden");
+    let cache6= document.getElementById("cache6").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache5 === false)||(cache6 === false) ) {
+        document.getElementById("cacheI").classList.add("hidden");
+        document.getElementById("cache2").classList.add("hidden");
+        document.getElementById("cache3").classList.add("hidden");
+        document.getElementById("cache5").classList.add("hidden");
+        document.getElementById("cache6").classList.add("hidden");
+    }
 })
 document.getElementById("informationPerso5").addEventListener("click",function(){
     document.getElementById("cache5").classList.toggle("hidden");
+    let cache1= document.getElementById("cacheI").classList.contains("hidden");
+    let cache3= document.getElementById("cache2").classList.contains("hidden");
+    let cache4= document.getElementById("cache3").classList.contains("hidden");
+    let cache5= document.getElementById("cache4").classList.contains("hidden");
+    let cache6= document.getElementById("cache6").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache4 === false)||(cache6 === false) ) {
+        document.getElementById("cacheI").classList.add("hidden");
+        document.getElementById("cache2").classList.add("hidden");
+        document.getElementById("cache3").classList.add("hidden");
+        document.getElementById("cache4").classList.add("hidden");
+        document.getElementById("cache6").classList.add("hidden");
+    }
 })
 document.getElementById("informationPerso6").addEventListener("click",function(){
     document.getElementById("cache6").classList.toggle("hidden");
+    let cache1= document.getElementById("cacheI").classList.contains("hidden");
+    let cache3= document.getElementById("cache2").classList.contains("hidden");
+    let cache4= document.getElementById("cache3").classList.contains("hidden");
+    let cache5= document.getElementById("cache4").classList.contains("hidden");
+    let cache6= document.getElementById("cache5").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false) ) {
+        document.getElementById("cacheI").classList.add("hidden");
+        document.getElementById("cache2").classList.add("hidden");
+        document.getElementById("cache3").classList.add("hidden");
+        document.getElementById("cache4").classList.add("hidden");
+        document.getElementById("cache5").classList.add("hidden");
+    }
 })
 
 
@@ -209,13 +281,35 @@ BoutonFormation.addEventListener("click", function(event) {
     let NouvelleFormation2 = document.createElement("li");
     let x=" ";
     NouvelleFormation.innerHTML = `<strong>${diplome}</strong><br>${Etablissemnt}`;
-    NouvelleFormation2.innerHTML = `<strong>${DateFormation}</strong>`+"<br> &nbsp;";
+    NouvelleFormation2.innerHTML = `<br><strong>${DateFormation}</strong>`;
     document.getElementById("AfficheFormation").appendChild(NouvelleFormation);
     document.getElementById("AfficheFormation2").appendChild(NouvelleFormation2);
     document.getElementById("diplome").value = "";
     document.getElementById("DateFormation").value = "";
     document.getElementById("Etablissemnt").value = "";
 });
+// gerer suppression d'une formation
+document.getElementById("supprimerFormation").addEventListener("click",function(event){
+   alert("Vous allez supprimez la derniere formation");
+    let liste = document.getElementById("AfficheFormation").children;
+    let liste2 = document.getElementById("AfficheFormation2").children;
+    let dernierelt = liste.length-1;    
+    liste[dernierelt].remove(); 
+    liste2[dernierelt].remove();
+        
+})
+// gerere bouton supprimer
+let image = document.getElementById("supprimerFormation");
+
+image.addEventListener("mouseover", function() {
+    image.src = 'images/supprimerRouge.svg'; // Image rouge au survol
+});
+
+image.addEventListener("mouseout", function() {
+    image.src = 'images/supprimer.svg'; // Image normale quand la souris quitte
+});
+
+
 // gerere competence
 let BoutonCompetence = document.getElementById("BoutonCompetence");
 let AfficheCompetence = document.getElementById("AfficheCompetence");
@@ -233,6 +327,7 @@ BoutonCompetence.addEventListener("click",function(event){
     AfficheCompetence.appendChild(NouvelleCompetence);
     RecupereCompetence.value="";
 })
+
 // gerer Langue
 let BoutonLangue = document.getElementById("BoutonLangue");
 let AfficheLangue = document.getElementById("AfficheLangue");
