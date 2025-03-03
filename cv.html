@@ -53,7 +53,7 @@
     
     <h2 class="pt-24 text-center text-2xl sm:text-2xl md:text-4xl font-semibold text-[#16428b] mb-6">Créer votre cv pro en visulisant de maniere instanné</h2>
    <!----------------------------------------disposition de lespace saisi cv et affichage cv------------------>
-   <div class="w-full sm:w-full xl:w-full md:w-auto grid grid-cols-1  sm:grid-cols-1 md:grid-cols-[50%_50%] xl:grid-cols-[50%_50%] gap-12 p-2">
+   <div class="w-full sm:w-full xl:w-full md:w-auto grid grid-cols-1  sm:grid-cols-1 md:grid-cols-[50%_50%] xl:grid-cols-[50%_50%] gap-4 p-6">
     <!----------------------------------------disposition de l'espace saisi cv------------------>
        <div>
              <!--information personelle-->
@@ -111,7 +111,7 @@
     
                     <div>
                         <div><label for="">Diplome</label><input  id="diplome" placeholder="Entre votre diplome" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>
-                        <div><label for="">Année</label><input  id="DateFormation" placeholder="Entre votre année de naissance" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>    
+                        <div><label for="">Année</label><input  id="DateFormation" placeholder="Entre votre année de naissance" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="date"></div>    
                      </div>
                     
                     <div>
@@ -121,7 +121,7 @@
                             <div><button id="BoutonFormation" class="text-1xl bg-white text-[#16428b] shadow-md w-full px-1 py-1 rounded-lg 
                                 text-sm md:text-base lg:text-lg 
                                 w-full md:w-auto hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez Formation</button></div>
-                            <div class=""><img id="supprimerFormation" class="cursor-pointer transition-all duration-300 ease-in-out w-8" src="images/supprimer.svg" alt=""></div>
+                            <div class=""><img id="supprimerFormation" class="HoverIconesupprimer cursor-pointer transition-all duration-300 ease-in-out w-8" src="images/supprimer.svg" alt=""></div>
                         </div>
                     </div>    
                 
@@ -204,93 +204,96 @@
                 </div>
             </div>
        </div>
-<!--------------------------Disposition de l'espace  affichage cv------------->
-        <div>
-            <div id="Moncv" class="w-[148mm] h-[210mm] overflow-auto transform transition-transform duration-300 hover:scale-110">
-                <div class=" relative top-40 h-[35mm] m-2 max-w-[210mm]  bg-[#18499a]">
-                    <div class="grid grid-cols-[20%_80%] gap-8 p-2 m-4">
-                        <div class="pt-2"><img id="previewImage"  class="border-3 border-white  w-24 h-24 rounded-full" src="images/img_bannier.jpg" alt=""></div>
-                        <div class="text-white">
-                            <!--cv parti information-->
-                            <H1 class=" text-2xl"><b class="break-words" id="AfficheNom"></b>    <b></b><b class="break-words" id="AffichePrenom"></b></H1>
-                            <h2 class="break-words" id="AffichePoste" class="text-1xl"></h2>
-                            <div class="flex items-center gap-2">
-                                <img id="ima" class="w-3 h-3 hidden" src="images/mail.png" alt="Icone de mail">
-                                <h2 id="AfficheMail" class="text-[10px] "></h2>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <img id="imgphone" class="hidden w-3 h-3" src="images/phone.png" alt="Icone de mail">
-                                <h2 id="AfficheTel" class="text-[10px] font-semibold"></h2>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <img id="imgAdress" class="hidden w-3 h-3" src="images/home2.png" alt="Icone de mail">
-                                <h2 id="AfficheAdress" class=" text-[10px] font-semibold"></h2>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <h2 id="AfficheDate" class=" text-[10px] font-semibold"></h2>
-                            </div>
-                        </div>
-                    </div>
+<!------------------------------------------Disposition de l'espace  affichage cv '(debut de cv)------------------------------------------->
+
+<div class="bg-[#1da876] scale-110 w-full h-screen" >
+    <!---------------------------------------------lentete de cv----------------------------------------------------->
+    <div class="bg-[#18499a]">
+        <div class="grid  grid-cols-[20%_80%] gap-6 p-4">
+            <div class="pt-2 ">
+                <img id="previewImage"  class="border-3 border-white  w-24 h-24 rounded-full" src="images/img_bannier.jpg" alt="">
+            </div>
+            <div class="text-white">
+                <!--cv parti information-->
+                <H1 class=" text-2xl"><b class="break-words" id="AfficheNom"></b>    <b></b><b class="break-words" id="AffichePrenom"></b></H1>
+                <h2 class="break-words" id="AffichePoste" class="text-1xl"></h2>
+                <div class="flex items-center gap-2">
+                    <img id="ima" class="w-3 h-3 hidden" src="images/mail.png" alt="Icone de mail">
+                    <h2 id="AfficheMail" class="text-[10px] "></h2>
                 </div>
-                <!--cv parti gauche-->
-                <div class="w-full max-w-[210mm] min-h-[297mm] grid grid-cols-[30%_70%]">
-                    <div class="p-3 bg-[#1da876] h-full p-2">
-                        <div class="relative top-38 text-white">
-                            <div>
-                                 <!--cv parti competence-->
-                                <h2 id="compet" class="hidden pb-1 font-bold">Competence</h2>
-                                 <ul id="AfficheCompetence">
-                                    
-                                </ul>
-                            </div>
-                            <div>
-                                    <!--cv parti Langue--> <br>
-                                <h2 id="lang" class=" hidden font-bold">Langues</h2>
-                                <ul id="AfficheLangue">
-                                    
-                                </ul>
-                            </div>
-                            <div>
-                                <!--cv parti Loisir--> <br>
-                            <h2 id="CacheLoisir" class=" hidden font-bold">Loisir</h2>
-                            <ul id="AfficheLoisir">
-                                
+                <div class="flex items-center gap-2">
+                    <img id="imgphone" class="hidden w-3 h-3" src="images/phone.png" alt="Icone de mail">
+                    <h2 id="AfficheTel" class="text-[10px] font-semibold"></h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img id="imgAdress" class="hidden w-3 h-3" src="images/home2.png" alt="Icone de mail">
+                    <h2 id="AfficheAdress" class=" text-[10px] font-semibold"></h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <h2 id="AfficheDate" class=" text-[10px] font-semibold"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!------------------------------------------cv parti gauche------------------------------>
+     <div class="w-full h-full grid grid-cols-[30%_70%]">
+        <div class="p-3 bg-[#1da876] h-full p-2">
+            <div class="relative text-white">
+                <div>
+                     <!--cv parti competence-->
+                    <h2 id="compet" class="hidden pb-1 font-bold">Competence</h2>
+                     <ul id="AfficheCompetence">
+                        
+                    </ul>
+                </div>
+                <div>
+                        <!--cv parti Langue--> <br>
+                    <h2 id="lang" class=" hidden font-bold">Langues</h2>
+                    <ul id="AfficheLangue">
+                        
+                    </ul>
+                </div>
+                <div>
+                    <!--cv parti Loisir--> <br>
+                <h2 id="CacheLoisir" class=" hidden font-bold">Loisir</h2>
+                <ul id="AfficheLoisir">
+                    
+                </ul>
+            </div>
+            </div>
+        </div>
+            <!--Partie droite-->
+                 
+     <div class="bg-white h-full p-2 ">
+            <div class="text-white relative ">
+               <!--Profil-->
+               <div>
+                    <div id="profil" class="hidden p-1 w-14 bg-[#1da876]"><h1  class=" font-bold" >Profil</h1></div>
+                    <h2 id="AfficheProfil" class="text-black text-[12px] break-words"></h2>
+               </div> 
+               <!--Formation-->
+            <div>
+                <div id="foma" class="hidden p-1 w-24 bg-[#1da876]"><h1 class="font-bold" >Formation</h1></div>
+                    <div class="grid grid-cols-[50%_50%] sm:grid-cols-[50%_50%] md:grid-cols-[50%_50%] ">
+                        <div>
+                            <ul id="AfficheFormation" class=" text-black text-[15px] break-words">
+                               
                             </ul>
                         </div>
-                        </div>
-                    </div>
-                             <!--Partie droite-->
-                             
-                    <div class="bg-white h-full p-2 ">
-                        <div class="text-white relative top-38">
-                           <!--Profil-->
-                           <div>
-                                <div id="profil" class="hidden p-1 w-14 bg-[#1da876]"><h1  class=" font-bold" >Profil</h1></div>
-                                <h2 id="AfficheProfil" class="text-black text-[12px] break-words"></h2>
-                           </div> 
-                           <!--Formation-->
                         <div>
-                            <div id="foma" class="hidden p-1 w-24 bg-[#1da876]"><h1 class="font-bold" >Formation</h1></div>
-                                <div class="grid grid-cols-[50%_50%] sm:grid-cols-[50%_50%] md:grid-cols-[50%_50%] ">
-                                    <div>
-                                        <ul id="AfficheFormation" class=" text-black text-[15px] break-words">
-                                           
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <ul id="AfficheFormation2" class="absolute right-0 text-black text-[12px] break-words">
-                                         
-                                        </ul>
-                                    </div>
-                                </div>
-                             </div>
+                            <ul id="AfficheFormation2" class="absolute right-0 text-black text-[12px] break-words">
+                             
+                            </ul>
                         </div>
                     </div>
-                    
-                </div>
+            </div>
+            </div>
         </div>
-        </div>
-   </div>
+        
+    </div>
+</div>
+        
+</div>
 
 
 

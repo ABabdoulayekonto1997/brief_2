@@ -301,7 +301,7 @@ BoutonFormation.addEventListener("click", function(event) {
     
     document.getElementById("foma").classList.remove("hidden");
     const diplome =document.getElementById("diplome").value;
-    const DateFormation =document.getElementById("DateFormation").value;
+    let DateFormation =document.getElementById("DateFormation").value;
     const Etablissemnt =document.getElementById("Etablissemnt").value;
     if (!diplome || !DateFormation || !Etablissemnt) {
         alert("Veuillez remplir tous les champs !");
@@ -309,8 +309,9 @@ BoutonFormation.addEventListener("click", function(event) {
     }
     let NouvelleFormation = document.createElement("li");
     let NouvelleFormation2 = document.createElement("li");
-    let x=" ";
-    NouvelleFormation.innerHTML = `<strong>${diplome}</strong><br>${Etablissemnt}`;
+    
+    
+    NouvelleFormation.innerHTML = `<strong>.</strong><strong>&nbsp${diplome}</strong><br>&nbsp${Etablissemnt}`;
     NouvelleFormation2.innerHTML = `<br><strong>${DateFormation}</strong>`;
     document.getElementById("AfficheFormation").appendChild(NouvelleFormation);
     document.getElementById("AfficheFormation2").appendChild(NouvelleFormation2);
@@ -328,8 +329,10 @@ document.getElementById("supprimerFormation").addEventListener("click",function(
     liste2[dernierelt].remove();
         
 })
-// gerere bouton supprimer
-let image = document.getElementById("supprimerFormation");
+//Gerer l'expercience utisateur
+ 
+// gerere le hover du bouton supprimer 
+let image = document.querySelector(".HoverIconesupprimer");
 
 image.addEventListener("mouseover", function() {
     image.src = 'images/supprimerRouge.svg'; // Image rouge au survol
