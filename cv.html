@@ -138,19 +138,21 @@
                     <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
                             <div><label for="">Nom de l’entreprise</label><input  id="NomEntreprise" placeholder="Entre le nom de l’entreprise" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>
-                            <div><label for="">Date de debut</label><input  id="NomEntreprise" placeholder="Entre la date du début" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="date"></div>
+                            <div><label for="">Date de debut</label><input  id="DateDebut" placeholder="Entre la date du début" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="date"></div>
                         </div>
                         
                         <div>
                             <div><label for="">poste occupé</label><input  id="PosteOccupe" placeholder="Entre votre poste " class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="text"></div>    
-                            <div><label for="">Date de fin</label><input  id="NomEntreprise" placeholder="Entre la date du début" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="date"></div>
+                            <div><label for="">Date de fin</label><input  id="DateFin" placeholder="Entre la date fin" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" type="date"></div>
                         </div> 
                     </div>
                    
-                    <label for="">poste occupé</label>
-                        <textarea placeholder="Decrire votre profil" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" name="" id="Recupere-profil"></textarea>
-                    
-                    
+                    <label for="">Description</label>
+                    <textarea id="RecupereRescriptionExpe" placeholder="Decrire votre expérience" class="p-1 focus:ring-2  border w-full md:w-auto shadow-md rounded" name="" ></textarea>
+                    <div class="grid text-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 ">
+                        <div><button id="BoutonExperience" class="text-1xl bg-white text-[#16428b] shadow-md w-full px-1 py-1 rounded-lg text-sm md:text-base lg:text-lg w-full md:w-auto hover:bg-[#16428b] hover:text-white transition-all duration-300">Ajoutez l'expérience</button></div>
+                        <div><img id="supprimerExperience" class="HoverIconesupprimer2 cursor-pointer transition-all duration-300 ease-in-out w-8" src="images/supprimer.svg" alt=""></div>
+                    </div>
                 </div>
             </div>
             <!--Compteneces--> <br>
@@ -206,7 +208,7 @@
        </div>
 <!------------------------------------------Disposition de l'espace  affichage cv '(debut de cv)------------------------------------------->
 
-<div class="bg-[#1da876] scale-110 w-full h-screen" >
+<div class="bg-[#1da876]  w-auto h-screen" >
     <!---------------------------------------------lentete de cv----------------------------------------------------->
     <div class="bg-[#18499a]">
         <div class="grid  grid-cols-[20%_80%] gap-6 p-4">
@@ -235,58 +237,72 @@
             </div>
         </div>
     </div>
-     <!------------------------------------------cv parti gauche------------------------------>
-     <div class="w-full h-full grid grid-cols-[30%_70%]">
-        <div class="p-3 bg-[#1da876] h-full p-2">
-            <div class="relative text-white">
+     <!------------------------------------------corp cv------------------------------>
+     <div class="w-auto h-full grid grid-cols-[30%_70%]">
+         <!--Partie gauche-->
+        <div class="p-3 text-white w-auto h-full p-2">
+             <!--cv parti competence-->
                 <div>
-                     <!--cv parti competence-->
+                    
                     <h2 id="compet" class="hidden pb-1 font-bold">Competence</h2>
                      <ul id="AfficheCompetence">
                         
                     </ul>
                 </div>
+            <!--cv parti Langue-->
                 <div>
-                        <!--cv parti Langue--> <br>
+                         <br>
                     <h2 id="lang" class=" hidden font-bold">Langues</h2>
                     <ul id="AfficheLangue">
                         
                     </ul>
                 </div>
+                 <!--cv parti Loisir--> 
                 <div>
-                    <!--cv parti Loisir--> <br>
+                   <br>
                 <h2 id="CacheLoisir" class=" hidden font-bold">Loisir</h2>
                 <ul id="AfficheLoisir">
                     
                 </ul>
-            </div>
+            
             </div>
         </div>
-            <!--Partie droite-->
-                 
-     <div class="bg-white h-full p-2 ">
-            <div class="text-white relative ">
+           
+        <!------------------------------------------Partie droite------------------------------------------------>         
+        <div class="bg-white w-auto h-full p-2 ">
+            <div class="text-white ">
                <!--Profil-->
                <div>
-                    <div id="profil" class="hidden p-1 w-14 bg-[#1da876]"><h1  class=" font-bold" >Profil</h1></div>
+                    <div id="profil" class="hidden p-1 w-auto bg-[#1da876]"><h1  class=" font-bold" >Profil</h1></div>
                     <h2 id="AfficheProfil" class="text-black text-[12px] break-words"></h2>
                </div> 
                <!--Formation-->
-            <div>
-                <div id="foma" class="hidden p-1 w-24 bg-[#1da876]"><h1 class="font-bold" >Formation</h1></div>
-                    <div class="grid grid-cols-[50%_50%] sm:grid-cols-[50%_50%] md:grid-cols-[50%_50%] ">
-                        <div>
-                            <ul id="AfficheFormation" class=" text-black text-[15px] break-words">
-                               
-                            </ul>
+                <div>
+                    <div id="foma" class="hidden p-1 w-auto bg-[#1da876]"><h1 class="font-bold" >Formation</h1></div>
+                        <div class="grid grid-cols-[40%_60%] sm:grid-cols-[40%_60%] md:grid-cols-[40%_60%] ">
+                            <div>
+                                <ul id="AfficheFormation" class=" text-black text-[15px] break-words">
+                                
+                                </ul>
+                            </div>
+                            <div class="">
+                                <ul id="AfficheFormation2" class="pr-6 absolute right-0 text-black text-[12px] break-words">
+                                
+                                </ul>
+                            </div>
                         </div>
-                        <div>
-                            <ul id="AfficheFormation2" class="absolute right-0 text-black text-[12px] break-words">
-                             
-                            </ul>
-                        </div>
-                    </div>
+                </div>
             </div>
+             <!----------------------------------Experience professionnelle-------------------------------------------->
+            <div>
+                <div id="Expe" class="hidden text-white p-1 w-auto bg-[#1da876]">
+                    <h1 class="font-bold" >Experience professionnel</h1>
+                </div>
+                <div>
+                    <ul id="AfficheExperience">
+
+                    </ul>
+                </div>
             </div>
         </div>
         

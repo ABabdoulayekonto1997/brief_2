@@ -298,7 +298,6 @@ const AfficheFormation=document.getElementById("AfficheFormation");
 const AfficheFormation2=document.getElementById("AfficheFormation2");
 BoutonFormation.addEventListener("click", function(event) {
     event.preventDefault();
-    
     document.getElementById("foma").classList.remove("hidden");
     const diplome =document.getElementById("diplome").value;
     let DateFormation =document.getElementById("DateFormation").value;
@@ -330,18 +329,49 @@ document.getElementById("supprimerFormation").addEventListener("click",function(
         
 })
 //Gerer l'expercience utisateur
- 
+
+document.getElementById("BoutonExperience").addEventListener("click",function(event){
+    document.getElementById("Expe").classList.remove("hidden");
+    let NomEntreprise = document.getElementById("NomEntreprise").value;
+    let PosteOccupe = document.getElementById("PosteOccupe").value;
+    let DateDebut = document.getElementById("DateDebut").value;
+    let DateFin = document.getElementById("DateFin").value;
+    let RecupereRescriptionExpe = document.getElementById("RecupereRescriptionExpe").value;
+    let AfficheExperience =document.getElementById("AfficheExperience");
+    
+
+    if (!NomEntreprise || !PosteOccupe || !DateDebut || !DateFin || !RecupereRescriptionExpe) {
+        alert("Veuillez remplir tous les champs !");
+        return;
+    }
+    
+    let NouvelleExperience = document.createElement("li");
+    NouvelleExperience.innerHTML= `<strong>.</strong> <strong>${PosteOccupe}</strong> | <span class="text-sm">(${DateDebut}-${DateFin})</span> <br> &nbsp  ${RecupereRescriptionExpe} `;
+    
+    AfficheExperience.appendChild(NouvelleExperience);
+
+    NomEntreprise.innerHTML=" ";
+    PosteOccupe.innerHTML=" ";
+    DateDebut.innerHTML=" ";
+    DateFin.innerHTML=" ";
+    
+})
+
 // gerere le hover du bouton supprimer 
 let image = document.querySelector(".HoverIconesupprimer");
-
 image.addEventListener("mouseover", function() {
     image.src = 'images/supprimerRouge.svg'; // Image rouge au survol
 });
-
 image.addEventListener("mouseout", function() {
     image.src = 'images/supprimer.svg'; // Image normale quand la souris quitte
 });
-
+let image2 = document.querySelector(".HoverIconesupprimer2");
+image2.addEventListener("mouseover", function() {
+    image2.src = 'images/supprimerRouge.svg'; // Image rouge au survol
+});
+image2.addEventListener("mouseout", function() {
+    image2.src = 'images/supprimer.svg'; // Image normale quand la souris quitte
+});
 
 // gerere competence
 let BoutonCompetence = document.getElementById("BoutonCompetence");
