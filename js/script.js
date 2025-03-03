@@ -68,12 +68,14 @@ document.getElementById("informationPerso").addEventListener("click", function()
     let cache4= document.getElementById("cache4").classList.contains("hidden");
     let cache5= document.getElementById("cache5").classList.contains("hidden");
     let cache6= document.getElementById("cache6").classList.contains("hidden");
-    if ((cache2 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false) ) {
+    let cache7= document.getElementById("cache7").classList.contains("hidden");
+    if ((cache2 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false)||(cache7 === false) ) {
         document.getElementById("cache2").classList.add("hidden");
         document.getElementById("cache3").classList.add("hidden");
         document.getElementById("cache4").classList.add("hidden");
         document.getElementById("cache5").classList.add("hidden");
         document.getElementById("cache6").classList.add("hidden");
+        document.getElementById("cache7").classList.add("hidden");
     }
 });
 
@@ -84,12 +86,15 @@ document.getElementById("informationPerso2").addEventListener("click",function()
     let cache4= document.getElementById("cache4").classList.contains("hidden");
     let cache5= document.getElementById("cache5").classList.contains("hidden");
     let cache6= document.getElementById("cache6").classList.contains("hidden");
-    if ((cache1 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false) ) {
+    let cache7= document.getElementById("cache7").classList.contains("hidden");
+    if ((cache1 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false)||(cache7 === false) ) {
         document.getElementById("cacheI").classList.add("hidden");
         document.getElementById("cache3").classList.add("hidden");
         document.getElementById("cache4").classList.add("hidden");
         document.getElementById("cache5").classList.add("hidden");
         document.getElementById("cache6").classList.add("hidden");
+        document.getElementById("cache7").classList.add("hidden");
+        
     }
 })
 document.getElementById("informationPerso3").addEventListener("click",function(){
@@ -99,12 +104,14 @@ document.getElementById("informationPerso3").addEventListener("click",function()
     let cache4= document.getElementById("cache4").classList.contains("hidden");
     let cache5= document.getElementById("cache5").classList.contains("hidden");
     let cache6= document.getElementById("cache6").classList.contains("hidden");
-    if ((cache1 === false)||(cache2 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false) ) {
+    let cache7= document.getElementById("cache7").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false)||(cache7 === false) ) {
         document.getElementById("cacheI").classList.add("hidden");
         document.getElementById("cache2").classList.add("hidden");
         document.getElementById("cache4").classList.add("hidden");
         document.getElementById("cache5").classList.add("hidden");
         document.getElementById("cache6").classList.add("hidden");
+        document.getElementById("cache7").classList.add("hidden");
     }
 })
 document.getElementById("informationPerso4").addEventListener("click",function(){
@@ -114,42 +121,65 @@ document.getElementById("informationPerso4").addEventListener("click",function()
     let cache4= document.getElementById("cache3").classList.contains("hidden");
     let cache5= document.getElementById("cache5").classList.contains("hidden");
     let cache6= document.getElementById("cache6").classList.contains("hidden");
-    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache5 === false)||(cache6 === false) ) {
+    let cache7= document.getElementById("cache7").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache5 === false)||(cache6 === false)||(cache7 === false) ) {
         document.getElementById("cacheI").classList.add("hidden");
         document.getElementById("cache2").classList.add("hidden");
         document.getElementById("cache3").classList.add("hidden");
         document.getElementById("cache5").classList.add("hidden");
         document.getElementById("cache6").classList.add("hidden");
+        document.getElementById("cache7").classList.add("hidden");
     }
 })
 document.getElementById("informationPerso5").addEventListener("click",function(){
     document.getElementById("cache5").classList.toggle("hidden");
     let cache1= document.getElementById("cacheI").classList.contains("hidden");
-    let cache3= document.getElementById("cache2").classList.contains("hidden");
-    let cache4= document.getElementById("cache3").classList.contains("hidden");
-    let cache5= document.getElementById("cache4").classList.contains("hidden");
+    let cache2= document.getElementById("cache2").classList.contains("hidden");
+    let cache3= document.getElementById("cache3").classList.contains("hidden");
+    let cache4= document.getElementById("cache4").classList.contains("hidden");
     let cache6= document.getElementById("cache6").classList.contains("hidden");
-    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache4 === false)||(cache6 === false) ) {
+    let cache7= document.getElementById("cache7").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache4 === false)||(cache6 === false)||(cache7 === false) ) {
         document.getElementById("cacheI").classList.add("hidden");
         document.getElementById("cache2").classList.add("hidden");
         document.getElementById("cache3").classList.add("hidden");
         document.getElementById("cache4").classList.add("hidden");
         document.getElementById("cache6").classList.add("hidden");
+        document.getElementById("cache7").classList.add("hidden");
     }
 })
 document.getElementById("informationPerso6").addEventListener("click",function(){
     document.getElementById("cache6").classList.toggle("hidden");
     let cache1= document.getElementById("cacheI").classList.contains("hidden");
-    let cache3= document.getElementById("cache2").classList.contains("hidden");
-    let cache4= document.getElementById("cache3").classList.contains("hidden");
-    let cache5= document.getElementById("cache4").classList.contains("hidden");
-    let cache6= document.getElementById("cache5").classList.contains("hidden");
-    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false) ) {
+    let cache2= document.getElementById("cache2").classList.contains("hidden");
+    let cache3= document.getElementById("cache3").classList.contains("hidden");
+    let cache4= document.getElementById("cache4").classList.contains("hidden");
+    let cache5= document.getElementById("cache5").classList.contains("hidden");
+    let cache7= document.getElementById("cache7").classList.contains("hidden");
+    if ((cache1 === false)||(cache2 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache7 === false) ) {
         document.getElementById("cacheI").classList.add("hidden");
         document.getElementById("cache2").classList.add("hidden");
         document.getElementById("cache3").classList.add("hidden");
         document.getElementById("cache4").classList.add("hidden");
         document.getElementById("cache5").classList.add("hidden");
+        document.getElementById("cache7").classList.add("hidden");
+    }
+})
+document.getElementById("informationPerso7").addEventListener("click",function(){
+    document.getElementById("cache7").classList.toggle("hidden");
+    let cache1= document.getElementById("cacheI").classList.contains("hidden");
+    let cache3= document.getElementById("cache3").classList.contains("hidden");
+    let cache4= document.getElementById("cache4").classList.contains("hidden");
+    let cache5= document.getElementById("cache5").classList.contains("hidden");
+    let cache6= document.getElementById("cache6").classList.contains("hidden");
+    let cache2= document.getElementById("cache2").classList.contains("hidden");
+    if ((cache1=== false)||(cache2 === false)||(cache3 === false)||(cache4 === false)||(cache5 === false)||(cache6 === false) ) {
+        document.getElementById("cacheI").classList.add("hidden");
+        document.getElementById("cache2").classList.add("hidden");
+        document.getElementById("cache3").classList.add("hidden");
+        document.getElementById("cache4").classList.add("hidden");
+        document.getElementById("cache5").classList.add("hidden");
+        document.getElementById("cache6").classList.add("hidden");
     }
 })
 
