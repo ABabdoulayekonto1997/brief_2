@@ -326,8 +326,18 @@ document.getElementById("supprimerFormation").addEventListener("click",function(
     let dernierelt = liste.length-1;    
     liste[dernierelt].remove(); 
     liste2[dernierelt].remove();
+   
         
 })
+// gerer suppression d'une experience
+document.getElementById("supprimerExperience").addEventListener("click",function(event){
+    alert("Vous allez supprimez le dernier experience ");
+     let liste = document.getElementById("AfficheExperience").children;
+     let dernierelt = liste.length-1;    
+     liste[dernierelt].remove();
+     
+         
+ })
 //Gerer l'expercience utisateur
 
 document.getElementById("BoutonExperience").addEventListener("click",function(event){
@@ -480,25 +490,36 @@ function sauvegarder() {
 
 // gerer telechargement 
 
-        document.getElementById('telechager').addEventListener('click', function () {
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("telechager").addEventListener("click", function () {
             const { jsPDF } = window.jspdf;
-    
-            // Sélectionne la div à capturer
-            const cvElement = document.getElementById('Moncv');
-    
-            // Utilise html2canvas pour capturer la div sous forme d'image
-            html2canvas(cvElement, { scale: 2 }).then(canvas => {
-                const imgData = canvas.toDataURL('image/png'); // Convertir le canvas en image
-                const pdf = new jsPDF('p', 'mm', 'a4'); // Créer un document PDF
-    
-                // Calcul de la taille optimale
-                const imgWidth = 210; // Largeur A4 en mm
-                const pageHeight = 297; // Hauteur A4 en mm
-                const imgHeight = (canvas.height * imgWidth) / canvas.width; // Hauteur ajustée pour conserver les proportions
-    
-                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-                pdf.save('cv.pdf'); // Télécharger le PDF
-            });
+            // Vérifier si l'élément existe
+            const cvElement = document.getElementById("moncv");
+            if (!cvElement) {
+                console.error("L'élément #moncv n'existe pas !");
+                return;
+            }
+
+            // Capturer l'élément avec html2canvas
+            html2canvas(cvElement, { scale: 2 })
+                .then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const pdf = new jsPDF("p", "mm", "a4");
+
+                    // Calcul de la hauteur proportionnelle
+                    const imgWidth = 210; // Largeur A4 en mm
+                    const pageHeight = 297; // Hauteur A4 en mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                    // Ajouter l'image au PDF
+                    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+
+                    // Sauvegarder le PDF
+                    pdf.save("cv.pdf");
+                })
+                .catch(error => console.error("Erreur html2canvas :", error));
         });
-    
+    });
+
+
 
